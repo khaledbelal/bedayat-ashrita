@@ -24,7 +24,7 @@
 <div class="headdown">
 	<div class="row clearfix">
 		<div class="logo bottomtip" title="Best and Most Popular Musics">
-			<a href="#"><img src="images/logo.png" alt="Best and Most Popular Musics"></a>
+			<a href="#"><img src="{{ URL('/templates/remix/images/logo.png') }}" alt="Best and Most Popular Musics"></a>
 		</div><!-- end logo -->
 
 		<nav>
