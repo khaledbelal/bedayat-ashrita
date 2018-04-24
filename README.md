@@ -1,2 +1,2 @@
-# bedayat-ashrita
-Bedayat Ashrita
+# moqdmat-ashrita
+Moqdmat Ashrita
