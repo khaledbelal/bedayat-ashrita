@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -25,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/cpanel';
 
     /**
      * Create a new controller instance.
@@ -38,8 +39,31 @@ class LoginController extends Controller
     }
 
     public function showLoginForm()
-    {
+    { 
         return view('cpanel.login');
     }
 
+    public function username()
+    {
+        return 'username';
+    }
+
+    /**
+     * Get the needed authorization credentials from the request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return array
+     */
+
+
+     protected function credentials(Request $request){
+        $field = filter_var($request->get($this->username()), FILTER_VALIDATE_EMAIL)
+            ? $this->username()
+            : 'name';
+
+        return [
+            $field => $request->get($this->username()),
+            'password' => $request->password,
+        ];
+    }
 }

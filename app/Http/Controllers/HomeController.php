@@ -20,8 +20,16 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */ 
-    public function home()
-    { 
+    public function cpanelHome(){ 
+    	return  view('cpanel.home'); 
+    } 
 
+    public function cpanelSheikhs(){ 
+    	return  view('cpanel.home'); 
+    } 
+
+    public function index()
+    { 
+    	return view('home'); 
     } 
 }
