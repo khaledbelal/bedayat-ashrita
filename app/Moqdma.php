@@ -14,8 +14,16 @@ class Moqdma extends Authenticatable
      *
      * @var array
      */
+    protected $table = "moqdmat";
     protected $fillable = [
         'name', 'description', 'path', 'image_path','total_views','sheikh_id','user_id'
     ];
- 
+ 	
+ 	public function user(){ 
+        return $this->belongsTo(User::class,'user_id');
+    } 
+
+    public function sheikh(){ 
+        return $this->belongsTo(Sheikh::class,'sheikh_id');
+    }
 }

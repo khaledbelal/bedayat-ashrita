@@ -26,4 +26,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function sheikhs(){ 
+        return $this->hasMany(Sheikh::class,'user_id');
+    }
+
+    public function moqdmat(){ 
+        return $this->hasMany(Moqdma::class,'user_id');
+    }
 }

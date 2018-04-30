@@ -16,10 +16,11 @@ class CreateMoqdmatTable extends Migration
         Schema::create('moqdmat', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('description'); 
+            $table->string('description')->nullable(); 
             $table->string('path'); 
-            $table->string('image_path'); 
-            $table->integer('total_views'); 
+            $table->string('image_path')->nullable(); 
+            $table->integer('total_views')->default(0); 
+            $table->tinyInteger('active')->default(1); 
             $table->unsignedInteger('sheikh_id');
             $table->foreign('sheikh_id')->references('id')->on('sheikhs');
             $table->unsignedInteger('user_id');

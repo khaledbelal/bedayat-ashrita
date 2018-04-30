@@ -16,8 +16,9 @@ class CreateSheikhsTable extends Migration
         Schema::create('sheikhs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('description'); 
-            $table->string('image_path'); 
+            $table->string('description')->nullable(); 
+            $table->string('image_path')->nullable(); 
+            $table->tinyInteger('active')->default(1); 
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
