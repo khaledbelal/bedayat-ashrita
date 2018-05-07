@@ -7,11 +7,12 @@
 <script type="text/javascript" src="{{ URL('/templates/remix/js/jquery.flexslider-min.js') }}"></script>
 <script type="text/javascript" src="{{ URL('/templates/remix/js/jquery.jplayer.js') }}"></script>
 <script type="text/javascript" src="{{ URL('/templates/remix/js/ttw-music-player-min.js') }}"></script>
-<script type="text/javascript" src="{{ URL('/templates/remix/music/myplaylist.js') }}"></script>
+<!-- <script type="text/javascript" src="{{ URL('/templates/remix/music/myplaylist.js') }}"></script> -->
 <script type="text/javascript" src="{{ URL('/templates/remix/js/countdown.js') }}"></script>
 <script type="text/javascript" src="{{ URL('/templates/remix/js/jquery.nicescroll.min.js') }}"></script>
 <script type="text/javascript" src="{{ URL('/templates/remix/js/twitter/jquery.tweet.js') }}"></script>
 <script type="text/javascript" src="{{ URL('/templates/remix/js/custom.js') }}"></script>
+@yield('page_level_js')
 <script type="text/javascript">	
 /* <![CDATA[ */
 	var tpj=jQuery;
@@ -45,4 +46,15 @@
 		});
 	});
 /* ]]> */
+
+	function increaseTotalViews(index){   
+        jQuery.ajax({
+            url: "{{ route('increase_view') }}",
+            data: { moqdma_id: myPlaylist[index].id },
+            type: 'get',
+            success: function(data){ 
+            	//alert(data);
+            }
+        });   
+	}
 </script>

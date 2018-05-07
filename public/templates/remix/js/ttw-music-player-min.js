@@ -42,6 +42,7 @@
 
         defaultOptions = {
             ratingCallback:null,
+            playCallback:null,
             currencySymbol:'$',
             buyText:'BUY',
             tracksToShow:5,
@@ -183,6 +184,7 @@
             }
 
             function playlistAdvance(index) {
+                increaseTotalViews(index);
                 playlistConfig(index);
 
                 if (index >= options.tracksToShow)
@@ -367,7 +369,7 @@
                     setTitle();
                     setArtist();
                     setRating('current', null, current);
-                    setCover();
+                    setCover(); 
                 });
             }
 

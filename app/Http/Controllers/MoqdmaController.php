@@ -138,4 +138,12 @@ class MoqdmaController extends Controller
         if($moqdma->save())
             return ($moqdma->active) ? 1 : 0;
     }
+
+    public function increaseView(Request $request)
+    { 
+        $moqdma = Moqdma::where('id',$request->moqdma_id)->increment('total_views'); 
+        
+        if($moqdma)
+            return 1;
+    }
 }
