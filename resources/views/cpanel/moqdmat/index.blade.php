@@ -41,7 +41,7 @@
                                 <td>{{ $moqdma->name }}</td>
                                 <td>{{ $moqdma->sheikh->name }}</td>
                                 <td><input class="form-control" type="text" name="" value="{{ url($moqdma->path) }}"></td>
-                                <td><i class="font-large-1 {{ ($moqdma->active) ? 'fa fa-eye success darken-1 ' : 'fa fa-eye-slash red accent-4' }}" ></i></td>
+                                <td><i class="font-large-1 cursor-pointer item_{{$moqdma->id}} {{ ($moqdma->active) ? 'fa fa-eye success darken-1 ' : 'fa fa-eye-slash  ' }}" onclick='moqdma_active("{{ URL::route("cpanel-active-moqdma",[$moqdma->id]) }}","item_{{$moqdma->id}}");' ></i></td>
                                 <td> 
                                     <form id="delete" method="POST" action="{{ route('cpanel-delete-moqdma',[$moqdma->id]) }}" accept-charset="UTF-8">
                                         <a href="{{ route('cpanel-edit-moqdma',[$moqdma->id]) }}">
@@ -79,4 +79,21 @@
 
 @section('page_level_js')
     <script src="{{ URL('/temp_dashboard/app-assets/js/scripts/tables/datatables/datatable-basic.js') }}" type="text/javascript"></script>
+    <script type="text/javascript"> 
+        function moqdma_active(url,item) {  
+            $.ajax({
+                url: url,
+                data: $('#report-frm').serialize(),                        
+                type: 'get',
+                success: function(data){ 
+                    if(data=='0'){  
+                        $('.'+item).addClass('fa-eye-slash').removeClass('fa-eye').removeClass('success').removeClass('darken-1');
+                    }
+                    else if(data=='1'){  
+                        $('.'+item).removeClass('fa-eye-slash').removeClass('red').addClass('fa-eye').addClass('success').addClass('darken-1'); 
+                    }
+                }
+            });  
+        }
+    </script>
 @endsection

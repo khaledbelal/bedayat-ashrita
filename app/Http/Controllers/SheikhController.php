@@ -99,4 +99,14 @@ class SheikhController extends Controller
         Sheikh::destroy($id);
         return \Redirect::route('cpanel-sheikhs');
     }
+
+
+    public function active($id)
+    { 
+        $sheikh = Sheikh::where('id',$id)->first(); 
+        $sheikh->active = ($sheikh->active) ? 0 : 1; 
+        
+        if($sheikh->save())
+            return ($sheikh->active) ? 1 : 0;
+    }
 }

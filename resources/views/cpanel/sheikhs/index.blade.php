@@ -39,7 +39,7 @@
                             <tr>
                                 <td>{{ $sheikh->name }}</td>
                                 <td>{{ $sheikh->moqdamt_count }}</td>
-                                <td><i class="font-large-1 {{ ($sheikh->active) ? 'fa fa-eye success darken-1 ' : 'fa fa-eye-slash red accent-4' }}" ></i></td>
+                                <td><i class="font-large-1 cursor-pointer  item_{{$sheikh->id}} {{ ($sheikh->active) ? 'fa fa-eye success darken-1 ' : 'fa fa-eye-slash  ' }}" onclick='sheikh_active("{{ URL::route("cpanel-active-sheikh",[$sheikh->id]) }}","item_{{$sheikh->id}}");' ></i></td>
                                 <td> 
                                     <form id="delete" method="POST" action="{{ route('cpanel-delete-sheikh',[$sheikh->id]) }}" accept-charset="UTF-8">
                                         <a href="{{ route('cpanel-edit-sheikh',[$sheikh->id]) }}">
@@ -76,4 +76,22 @@
 
 @section('page_level_js')
     <script src="{{ URL('/temp_dashboard/app-assets/js/scripts/tables/datatables/datatable-basic.js') }}" type="text/javascript"></script>
+
+    <script type="text/javascript"> 
+        function sheikh_active(url,item) {  
+            $.ajax({
+                url: url,
+                data: $('#report-frm').serialize(),                        
+                type: 'get',
+                success: function(data){ 
+                    if(data=='0'){  
+                        $('.'+item).addClass('fa-eye-slash').removeClass('fa-eye').removeClass('success').removeClass('darken-1');
+                    }
+                    else if(data=='1'){  
+                        $('.'+item).removeClass('fa-eye-slash').removeClass('red').addClass('fa-eye').addClass('success').addClass('darken-1'); 
+                    }
+                }
+            });  
+        }
+    </script>
 @endsection

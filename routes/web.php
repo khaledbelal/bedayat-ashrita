@@ -24,6 +24,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('cpanel/sheikhs/edit/{slug}', 'SheikhController@edit')->name('cpanel-edit-sheikh');
 	Route::put('cpanel/sheikhs/update/{slug}', 'SheikhController@update')->name('cpanel-update-sheikh');
 	Route::delete('cpanel/sheikhs/delete/{slug}', 'SheikhController@destroy')->name('cpanel-delete-sheikh');
+	Route::get('cpanel/sheikhs/active/{slug}', 'SheikhController@active')->name('cpanel-active-sheikh');
  
 	//Moqdmat
 	Route::get('cpanel/moqdmat', 'MoqdmaController@index')->name('cpanel-moqdmat');
@@ -33,6 +34,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('cpanel/moqdmat/edit/{slug}', 'SheikhController@edit')->name('cpanel-edit-moqdma');
 	Route::put('cpanel/moqdmat/update/{slug}', 'SheikhController@update')->name('cpanel-update-moqdma');
 	Route::delete('cpanel/moqdmat/delete/{slug}', 'SheikhController@destroy')->name('cpanel-delete-moqdma');
+	Route::get('cpanel/moqdmat/active/{slug}', 'MoqdmaController@active')->name('cpanel-active-moqdma');
 });
 
 /* ======================================= Front-end ===================================== */  

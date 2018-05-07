@@ -128,4 +128,14 @@ class MoqdmaController extends Controller
         } 
         return 'done';   
     }
+
+
+    public function active($id)
+    { 
+        $moqdma = Moqdma::where('id',$id)->first(); 
+        $moqdma->active = ($moqdma->active) ? 0 : 1; 
+        
+        if($moqdma->save())
+            return ($moqdma->active) ? 1 : 0;
+    }
 }

@@ -144,22 +144,7 @@
 		$('.moqdmat-details').append('<div class="col-xl-4 col-lg-12 col-md-12 "><fieldset class="form-group"><label >اسم المقدمة :</label><input type="hidden" class="form-control" name="server_name[]" value="'+file.name+'"><input type="text" class="form-control" name="name[]" value="'+get_file(file.name,"name")+'" required autofocus></fieldset>	    	<fieldset class="form-group">	            <label>الشيخ :</label>	    		<select class="form-control sheikh_id" name="sheikh_id[]" required>        			<option value="">اختر</option>        			@foreach($sheikhs as $sheikh)        				<option value="{{ $sheikh->id }}">{{$sheikh->name}}</option>        			@endforeach        		</select>	    	</fieldset>	    	<fieldset class="form-group">	            <label >الوصف :</label> 	    		<textarea  class="form-control" name="description[]"></textarea>	    	</fieldset>		</div>'); 
 	});
 
-	/*myDropzone.options = {
-		previewTemplate: document.querySelector('#template-container').innerHTML,
-		// Specifing an event as an configuration option overwrites the default
-		// `addedfile` event handler.
-		addedfile: function(file) {
-		file.previewElement = Dropzone.createElement(this.options.previewTemplate);
-		// Now attach this new element some where in your page
-		},
-		thumbnail: function(file, dataUrl) {
-		// Display the image in your file.previewElement
-		},
-		uploadprogress: function(file, progress, bytesSent) {
-		alert(progress);
-		}
-		// etc...
-	};*/
+
 	$('#sheikh_id').select2({
 	    placeholder: "اختر"
 	});
