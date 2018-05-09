@@ -14,6 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ URL('/templates/remix/styles/icons/icons.css') }}" media="screen" />
 	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 
+	<link rel="stylesheet" type="text/css" href="{{ URL('/templates/remix/rtl.css') }}" media="screen" />
 <!-- Favicon -->
 	<link rel="shortcut icon" href="{{ URL('/templates/remix/images/favicon.ico') }}">
 	<link rel="apple-touch-icon" href="{{ URL('/templates/remix/images/apple-touch-icon.png') }}">

@@ -12,3 +12,4 @@ yarn-error.log
 .env
 public/moqdmat/
 public/temp_uploads/
+public/moqdmat_files/

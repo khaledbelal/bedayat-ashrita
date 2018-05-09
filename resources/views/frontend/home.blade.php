@@ -370,7 +370,7 @@
 			currencySymbol:'$',
 			buyText:'BUY',
 			tracksToShow:3,
-			autoplay:false,
+			autoplay:true,
 			ratingCallback:function(index, playlistItem, rating){ 
 				//
 			},

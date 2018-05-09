@@ -49,7 +49,7 @@
 
 	function increaseTotalViews(index){   
         jQuery.ajax({
-            url: "{{ route('increase_view') }}",
+            url: "{{ route('increase-view') }}",
             data: { moqdma_id: myPlaylist[index].id },
             type: 'get',
             success: function(data){ 

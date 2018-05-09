@@ -1,6 +1,7 @@
+* {direction: rtl;}
 .body { direction: rtl; overflow-x: hidden !important }
 .logo, .meta { float: right }
-.sf-menu { float: left; margin: 20px 0 0 0 }
+.sf-menu { float: right; margin: 20px 40px 0 0 }
 .sf-menu li { float: right;text-align: right }
 .sf-menu a { padding: 0 0 30px 40px }
 .little-head { float: left }

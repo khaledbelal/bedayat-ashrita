@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 use App\Sheikh;
 use App\User;
 use App\Moqdma;
+use App\View;
 use Auth; 
 use File;
+use Route;
 
 class MoqdmaController extends Controller
 {
@@ -19,8 +21,15 @@ class MoqdmaController extends Controller
      */
     public function index()
     {
-        $moqdmat = Moqdma::all(); 
-        return view('cpanel.moqdmat.index',compact('moqdmat'));
+        if(Route::currentRouteName() == 'cpanel-moqdmat'){
+            $moqdmat = Moqdma::all(); 
+            return view('cpanel.moqdmat.index',compact('moqdmat'));
+        }
+        else{
+            $moqdmat_created = Moqdma::where('active',1)->orderBy('created_at','asc')->get(); 
+            $moqdmat_total_views = Moqdma::where('active',1)->orderBy('total_views','desc')->get(); 
+            return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views')); 
+        }
     }
 
     /**
@@ -47,7 +56,7 @@ class MoqdmaController extends Controller
             foreach ($files as $file) {   
                 $file_path_parts = pathinfo($file);   
                 if($server_name == $file_path_parts['filename'].'.'.$file_path_parts['extension']){  
-                    $new_path = 'moqdmat/'.$request->sheikh_id[$key];
+                    $new_path = 'moqdmat_files/'.$request->sheikh_id[$key];
                     File::makeDirectory($new_path, 0775, true, true);
 
                     $moqdma = Moqdma::create([
@@ -75,9 +84,9 @@ class MoqdmaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+         return view('frontend.a-z'); 
     }
 
     /**
@@ -141,9 +150,49 @@ class MoqdmaController extends Controller
 
     public function increaseView(Request $request)
     { 
-        $moqdma = Moqdma::where('id',$request->moqdma_id)->increment('total_views'); 
+        $view =  view::create([ 
+            "moqdma_id" => $request->moqdma_id
+        ]); 
+
+        if(Auth::check()){
+            $view->user_id = Auth::id();
+            $view->save();
+        } 
+
+        if($view)
+            $moqdma = Moqdma::where('id',$request->moqdma_id)->increment('total_views'); 
         
         if($moqdma)
             return 1;
+    }
+
+    public function filter($string)
+    {  
+        $moqdma = Moqdma::where('active',1);
+        $arr_string = array();
+
+        if($string == 'ا')
+            $arr_string = array('ا','أ','إ','آ'); 
+        elseif($string == 'ي')
+            $arr_string = array('ي','ى','ئ'); 
+        elseif($string == 'و')
+            $arr_string = array('و','ؤ'); 
+        elseif($string == '0-9')
+            $arr_string = array('0','1','2','3','4','5','6','7','8','9'); 
+
+        if(count($arr_string) > 0){
+            $moqdma = $moqdma->Where(function ($query) use($arr_string) {
+                for ($i = 0; $i < count($arr_string); $i++){
+                    $query->orwhere('name', 'like',$arr_string[$i] .'%');
+                }      
+            });
+        }
+        else
+            $moqdma = $moqdma->Where('name', 'like',$string .'%');
+
+        $moqdmat_created = $moqdma->orderBy('created_at','asc')->get(); 
+        $moqdmat_total_views = $moqdma->orderBy('total_views','desc')->get(); 
+        
+        return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views')); 
     }
 }
