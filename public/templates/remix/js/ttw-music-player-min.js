@@ -81,8 +81,8 @@
                 listItem:'<li class="track">' +
                             '<span class="title"></span>' +
                             '<span class="duration"></span>' +
-                            '<span class="rating"></span>' +
-                            '<a href="#" class="buy not-active" target="_blank"></a>' +
+                            '<!--<span class="rating"></span>-->' +
+                            '<!--<a href="#" class="buy not-active" target="_blank"></a>-->' +
                         '</li>',
                 ratingBar:'<span class="rating-level rating-bar"></span>'
             };
@@ -385,13 +385,13 @@
                         '        </div>' +
                         '        <div class="track-info">' +
                         '            <p class="title"></p>' +
-                        '            <p class="artist-outer">By <span class="artist"></span></p>' +
+                        '            <p class="artist-outer">تم الرفع بواسطة <span class="artist"></span></p>' +
                         '            <div class="rating">' +
+                        '               <!-- <span class="rating-level rating-star on"></span>' +
                         '                <span class="rating-level rating-star on"></span>' +
                         '                <span class="rating-level rating-star on"></span>' +
                         '                <span class="rating-level rating-star on"></span>' +
-                        '                <span class="rating-level rating-star on"></span>' +
-                        '                <span class="rating-level rating-star"></span>' +
+                        '                <span class="rating-level rating-star"></span>-->' +
                         '            </div>' +
                         '        </div>' +
                         '        <div class="player-controls">' +
