@@ -29,11 +29,11 @@
 
 		<nav>
 			<ul class="sf-menu">
-				<li class="{{(Route::currentRouteName() == 'home') ? 'current selectedLava' : ''}}"><a href="{{ route('home') }}">الرئيسية<span class="sub">استمتمع معنا</span></a></li>
+				<li class="{{(Route::currentRouteName() == 'home' ) ? 'current selectedLava' : ''}}"><a href="{{ route('home') }}">الرئيسية<span class="sub">استمتمع معنا</span></a></li>
 
-				<li><a href="index.html">الشيوخ<span class="sub">ترتيب ابجدي</span></a></li>
+				<li class="{{(Route::currentRouteName() == 'all-sheikhs' ) ? 'current selectedLava' : ''}}"><a href="{{ route('all-sheikhs') }}">الشيوخ<span class="sub">ترتيب ابجدي</span></a></li>
 
-				<li class="{{(Route::currentRouteName() == 'all-moqdmat') ? 'current selectedLava' : ''}}"><a href="{{ route('all-moqdmat') }}">المقدمات<span class="sub">ترتيب ابجدي</span></a></li>
+				<li class="{{(Route::currentRouteName() == 'all-moqdmat' or Route::currentRouteName() == 'moqdmat-filter') ? 'current selectedLava' : ''}}"><a href="{{ route('all-moqdmat') }}">المقدمات<span class="sub">ترتيب ابجدي</span></a></li>
 
 				<li><a href="videos.html">من نحن<span class="sub">تعرف علينا</span></a></li>
 				<li><a href="gallery4.html">اتصل بنا<span class="sub">يشرفنا محادثتك</span></a></li>  
