@@ -427,7 +427,7 @@
                         '    </div>' +
                         '    <div class="tracklist">' +
                         '        <ol class="tracks"> </ol>' +
-                        '        <div class="more">View More...</div>' +
+                        '        <div class="more">مشاهدة الكل ...</div>' +
                         '    </div>' +
                         '    <div class="jPlayer-container"></div>' +
                         '</div>';

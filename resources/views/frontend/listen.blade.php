@@ -6,7 +6,7 @@
 
 @section('content') 
 <div class="under_header">
-	<img src="images/assets/breadcrumbs10.png" alt="#">
+	<!-- <img src="{{ URL('/templates/remix/images/assets/ramadan.jpg') }}" alt="#"> -->
 </div><!-- under header -->
 
 <div class="page-content back_to_up">

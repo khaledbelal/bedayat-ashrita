@@ -1,10 +1,10 @@
 
-<title>@yield('title') - مقدمات الاشرطة الاسلامية</title>
+<title>@yield('title') - مقدمات الاشرطة</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 <!-- Seo Meta -->
-	<meta name="description" content="Remix - Music & Band Site Template HTML5 and CSS3">
-	<meta name="keywords" content="remix, music, light, dark, themeforest, multi purpose, band, css3, html5">
+	<meta name="description" content="إصلاح الجوارح الافئدة من مقدمات الأشرطة">
+	<meta name="keywords" content="مقدمات, اشرطة, اسلاميات, شيخ, تجميع, مقدمات اشرطة اسلامية">
 
 <!-- Styles -->
 	<link rel="stylesheet" type="text/css" href="{{ URL('/templates/remix/bootstrap/css/bootstrap.min.css') }}" media="screen" />

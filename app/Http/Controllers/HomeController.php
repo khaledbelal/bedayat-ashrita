@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User; 
+use App\Moqdma;
 use Auth; 
 use DB; 
 
@@ -28,8 +29,18 @@ class HomeController extends Controller
     	return  view('cpanel.home'); 
     } 
 
+    public function about(){ 
+        return  view('frontend.about'); 
+    } 
+
+    public function contact(){ 
+        return  view('frontend.contact'); 
+    } 
+
     public function index()
     { 
-    	return view('frontend.home'); 
+        $moqdmat = Moqdma::where('active',1)->orderByRaw("RAND()")->limit(10)->get();  
+        $moqdmat_best = Moqdma::where('active',1)->orderBy('total_views','desc')->limit(5)->get();
+    	return view('frontend.home',compact('moqdmat','moqdmat_best')); 
     } 
 }

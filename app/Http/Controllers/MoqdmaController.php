@@ -28,7 +28,8 @@ class MoqdmaController extends Controller
         else{
             $moqdmat_created = Moqdma::where('active',1)->orderBy('created_at','asc')->limit(14)->get(); 
             $moqdmat_total_views = Moqdma::where('active',1)->orderBy('total_views','desc')->limit(14)->get(); 
-            return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views')); 
+            $moqdmat_best = Moqdma::where('active',1)->orderBy('total_views','desc')->limit(5)->get();
+            return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views','moqdmat_best')); 
         }
     }
 
@@ -194,8 +195,9 @@ class MoqdmaController extends Controller
 
         $moqdmat_created = $moqdma->orderBy('created_at','asc')->get(); 
         $moqdmat_total_views = $moqdma->orderBy('total_views','desc')->get(); 
+        $moqdmat_best = Moqdma::where('active',1)->orderBy('total_views','desc')->limit(5)->get();
         
-        return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views')); 
+        return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views','moqdmat_best')); 
     }
 
     public function sheikh($sheikh_id)
@@ -203,7 +205,8 @@ class MoqdmaController extends Controller
         $moqdma = Moqdma::where('active',1)->where('sheikh_id',$sheikh_id); 
         $moqdmat_created = $moqdma->orderBy('created_at','asc')->limit(14)->get(); 
         $moqdmat_total_views = $moqdma->orderBy('total_views','desc')->limit(14)->get(); 
+        $moqdmat_best = Moqdma::where('active',1)->orderBy('total_views','desc')->limit(5)->get();
         
-        return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views')); 
+        return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views','moqdmat_best')); 
     }
 }

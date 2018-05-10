@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="under_header">
-	<img src="images/assets/breadcrumbs10.png" alt="#">
+	<!-- <img src="{{ URL('/templates/remix/images/assets/ramadan.jpg') }}" alt="#"> -->
 </div><!-- under header -->
 
 <div class="page-content back_to_up">
@@ -58,39 +58,24 @@
 			</div>  -->
 
 			<div class="def-block widget">
-				<h4> Featured Videos </h4><span class="liner"></span>
+				<h5> اكثر المقدمات استماعا </h5><span class="liner"></span>
 				<div class="widget-content row-fluid">
-					<div class="videos clearfix flexslider">
-						<ul class="slides">
-							<li class="featured-video">
-								<a href="video_single_wide.html">
-									<img src="images/assets/video1.jpg" alt="#">
-									<i class="icon-play-sign"></i>
-									<h3>I Know You Want Me</h3>
-									<span>Fitbull</span>
-								</a>
-							</li><!-- slide -->
-							<li class="featured-video">
-								<a href="video_single_wide.html">
-									<img src="images/assets/video2.jpg" alt="#">
-									<i class="icon-play-sign"></i>
-									<h3>I Like It</h3>
-									<span>Enrique</span>
-								</a>
-							</li><!-- slide -->
-							<li class="featured-video">
-								<a href="video_single_wide.html">
-									<img src="images/assets/video3.jpg" alt="#">
-									<i class="icon-play-sign"></i>
-									<h3>Tommorow</h3>
-									<span>Dj Michele</span>
-								</a>
-							</li><!-- slide -->
-						</ul>
+					<div class="scroll-oneperson" style="height: 420px;">
+						<div class="content">
+							<ul class="tab-content-items">
+								@foreach($moqdmat_best as $moqdma)
+								<li>
+									<a class="m-thumbnail" href="{{route('moqdma-listen',[$moqdma->id])}}"><img width="50" height="50" src="{{ URL('templates/remix/images/player/album-cover-bg.jpg') }}" alt="#"></a>
+									<h3><a href="{{route('moqdma-listen',[$moqdma->id])}}">{{$moqdma->name}}</a></h3>
+									<span> {{$moqdma->sheikh->name}} </span>
+									<span> استمعت {{$moqdma->total_views}} مرة (ات) </span>
+								</li>
+								@endforeach
+							</ul>
+						</div>
 					</div>
 				</div><!-- widget content -->
-			</div><!-- def block widget videos -->
-
+			</div><!-- def block widget popular items -->
 		</div><!-- span4 sidebar -->
 		<div class="span8 posts">
 			<div class="def-block">

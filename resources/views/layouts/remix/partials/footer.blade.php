@@ -8,8 +8,8 @@
 				<li><a href="{{ route('home') }}">الرئيسية</a></li>
 				<li><a href="{{ route('all-sheikhs') }}">الشيوخ</a></li>
 				<li><a href="{{ route('all-moqdmat') }}">المقدمات</a></li>
-				<li><a href="{{ route('home') }}">من نحن</a></li>
-				<li><a href="{{ route('home') }}">اتصل بنا</a></li> 
+				<li><a href="{{ route('about') }}">من نحن</a></li>
+				<li><a href="{{ route('contact') }}">اتصل بنا</a></li> 
 			</ul><!-- end links -->
 		</div><!-- end foot menu -->
 	</div><!-- row -->

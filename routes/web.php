@@ -39,6 +39,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 /* ======================================= Front-end ===================================== */  
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/about', 'HomeController@about')->name('about');
+Route::get('/contact', 'HomeController@contact')->name('contact');
 
 //Moqdmat
 Route::get('/moqdmat/increaseView', 'MoqdmaController@increaseView')->name('increase-view');
