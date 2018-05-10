@@ -18,7 +18,7 @@
 		<header id="header" class="glue">
 			@include('layouts.remix.partials.mainheader') 
 		</header><!-- end header -->
-
+		
 		@yield('content')
 
 		<footer id="footer"> 

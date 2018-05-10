@@ -1,16 +1,15 @@
 
 <div class="footer-last">
 	<div class="row clearfix">
-		<span class="copyright">© 2013 by <a href="http://theme20.com/">Theme20</a>. All Rights Reserved. Powered by <a href="http://themeforest.net/user/behzadg?ref=behzadg">Themeforest</a>.</span>
+		<span class="copyright">© {{ date('Y') }} بواسطة <a href="http://dev.khaledbelal.net/">Dev.khaledbelal.net</a> -  متاح للاستخدام الشخصي غير التجاري.</span>
 		<div id="toTop"><i class="icon-angle-up"></i></div><!-- Back to top -->
 		<div class="foot-menu">
 			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="mp3s.html">MP3</a></li>
-				<li><a href="videos.html">Video</a></li>
-				<li><a href="gallery.html">Photo Gallery</a></li>
-				<li><a href="blog.html">Blog</a></li>
-				<li><a href="contact.html">Contact</a></li>
+				<li><a href="{{ route('home') }}">الرئيسية</a></li>
+				<li><a href="{{ route('all-sheikhs') }}">الشيوخ</a></li>
+				<li><a href="{{ route('all-moqdmat') }}">المقدمات</a></li>
+				<li><a href="{{ route('home') }}">من نحن</a></li>
+				<li><a href="{{ route('home') }}">اتصل بنا</a></li> 
 			</ul><!-- end links -->
 		</div><!-- end foot menu -->
 	</div><!-- row -->

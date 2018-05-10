@@ -368,7 +368,7 @@ textarea {
 }
 .sticky {
 	position: fixed !important;
-	margin-top: -64px !important;
+	margin-top: -20px !important;
 }
 .boxed .sticky, .boxed-margin .sticky {
 	width: 100%;
@@ -483,7 +483,7 @@ textarea {
 }
 .logo {
 	float: left;
-	margin: 28px 0 14px;
+	margin: 28px 0 0px;
 	width: 126px;
 }
 .social-head {
@@ -1296,7 +1296,7 @@ li.track:hover .buy, .playing .buy {
 /*	Blog Post
 ----------------------------------------------------------------------*/
 .def-block {
-	padding: 30px;
+	padding: 30px 30px 0 30px ;
 	background: rgba(0, 0, 0, 0.4);
 	border-radius: 6px;
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.15), 0 1px 0 rgba(255, 255, 255, 0.04);

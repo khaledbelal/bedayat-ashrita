@@ -1,3 +1,19 @@
+@font-face {
+    font-family: 'Morvarid';
+    src: url('./Sp_Morvarid-Normal_p30download.com_.ttf');
+}
+
+@font-face {
+    font-family: 'abdo';
+    src: url('./abdo-free-1.ttf');
+}
+
+.logo {width: auto;margin-top: 12px;text-align: center;}
+.logo span {font-family: Morvarid;font-size: 16px !important;color: #FF0078;}
+.logo h1 {font-family: abdo; font-size: 40px !important;color: #FF0078;}
+
+.logo:hover h1,.logo:hover span{color: #fff;}
+
 * {direction: rtl;}
 .player-controls * {direction:ltr}
 .body { direction: rtl; overflow-x: hidden !important }
