@@ -10,81 +10,61 @@
 	<div class="fullwidthbanner-container">					
 		<div class="revolution">
 			<ul>
-				<li data-transition="random" data-slotamount="7" data-masterspeed="300" >
-			<img src="{{ URL('/templates/remix/images/slides/slider1.jpg') }}" alt="slider" >
+				<li data-transition="random" data-slotamount="7" data-masterspeed="300" > 
+					<img src="{{ URL('/templates/remix/images/slides/1.jpg') }}" alt="slider" >
+						<a href="">		 
+
+							<div class="tp-caption large_text randomrotate"  
+								 data-x="559" 
+								 data-y="253" 
+								 data-speed="500" 
+								 data-start="1000" 
+								 data-easing="easeInOutExpo"  >أمن يجيب المضطر</div>
 											
-	<div class="tp-caption fade"  
-		 data-x="566" 
-		 data-y="306" 
-		 data-speed="300" 
-		 data-start="800" 
-		 data-easing="easeInOutExpo"  ><img src="{{ URL('/templates/remix/images/slides/slide1-cap1.png') }}" alt="Image 2"></div>
-					
-	<div class="tp-caption sfl"  
-		 data-x="566" 
-		 data-y="305" 
-		 data-speed="300" 
-		 data-start="1200" 
-		 data-easing="easeInOutExpo"  ><img src="{{ URL('/templates/remix/images/slides/slide1-cap2.png') }}" alt="Image 3"></div>
-					
-	<div class="tp-caption sfr"  
-		 data-x="741" 
-		 data-y="305" 
-		 data-speed="300" 
-		 data-start="1200" 
-		 data-easing="easeInOutExpo"  ><img src="{{ URL('/templates/remix/images/slides/slide1-cap3.png') }}" alt="Image 4"></div>
-					
-	<div class="tp-caption sfr"  
-		 data-x="711" 
-		 data-y="374" 
-		 data-speed="300" 
-		 data-start="2000" 
-		 data-easing="easeInOutExpo"  ><a href="mp3_single_half.html"><img src="{{ URL('/templates/remix/images/slides/slide1-cap4.png') }}" alt="Image 5"></a></div>
-					
-	<div class="tp-caption sfl"  
-		 data-x="714" 
-		 data-y="375" 
-		 data-speed="300" 
-		 data-start="2000" 
-		 data-easing="easeInOutExpo"  ><img src="{{ URL('/templates/remix/images/slides/slide1-cap5.png') }}" alt="Image 6"></div>
+							<div class="tp-caption medium_text randomrotate"  
+								 data-x="563" 
+								 data-y="313" 
+								 data-speed="500" 
+								 data-start="1500" 
+								 data-easing="easeInOutExpo"  >بدر المشاري</div>	 
+ 						</a>				
 				</li>
-
 				<li data-transition="random" data-slotamount="7" data-masterspeed="300" >
-			<img src="{{ URL('/templates/remix/images/slides/slider2.jpg') }}" alt="slider2" >
+					<img src="{{ URL('/templates/remix/images/slides/2.jpg') }}" alt="slider2" >
+						<a href="">		 					
+						<div class="tp-caption big_black randomrotate"  
+							 data-x="603" 
+							 data-y="324" 
+							 data-speed="500" 
+							 data-start="1200" 
+							 data-easing="easeInOutExpo"  >خالد الراشد</div>
+										
+						<div class="tp-caption big_orange randomrotate"  
+							 data-x="701" 
+							 data-y="268" 
+							 data-speed="500" 
+							 data-start="1700" 
+							 data-easing="easeInOutExpo"  >   أمي  </div>
+						</a> 
+				</li> 
+				<li data-transition="random" data-slotamount="7" data-masterspeed="300" >
+					<img src="{{ URL('/templates/remix/images/slides/3.jpg') }}" alt="slider3" >
+						<a href="">								
+							<div class="tp-caption large_text randomrotate"  
+								 data-x="559" 
+								 data-y="253" 
+								 data-speed="500" 
+								 data-start="1000" 
+								 data-easing="easeInOutExpo"  >ربنايون لا رمضانيون</div>
 											
-	<div class="tp-caption big_black randomrotate"  
-		 data-x="603" 
-		 data-y="384" 
-		 data-speed="500" 
-		 data-start="1200" 
-		 data-easing="easeInOutExpo"  >Responsive Design</div>
-					
-	<div class="tp-caption big_orange randomrotate"  
-		 data-x="701" 
-		 data-y="328" 
-		 data-speed="500" 
-		 data-start="1700" 
-		 data-easing="easeInOutExpo"  >Retina Ready</div>
-
-									</li>
-
-						<li data-transition="random" data-slotamount="7" data-masterspeed="300" >
-			<img src="{{ URL('/templates/remix/images/slides/slider3.jpg') }}" alt="slider3" >
-											
-	<div class="tp-caption large_text randomrotate"  
-		 data-x="559" 
-		 data-y="253" 
-		 data-speed="500" 
-		 data-start="1000" 
-		 data-easing="easeInOutExpo"  >Revolution Slider</div>
-					
-	<div class="tp-caption medium_text randomrotate"  
-		 data-x="563" 
-		 data-y="313" 
-		 data-speed="500" 
-		 data-start="1500" 
-		 data-easing="easeInOutExpo"  >Awesome MusicPlayer</div>
-					
+							<div class="tp-caption medium_text randomrotate"  
+								 data-x="563" 
+								 data-y="313" 
+								 data-speed="500" 
+								 data-start="1500" 
+								 data-easing="easeInOutExpo"  >محمد العريفي</div>
+					 	</a> 
+					<!-- 
 	<div class="tp-caption medium_text randomrotate"  
 		 data-x="565" 
 		 data-y="345" 
@@ -104,7 +84,7 @@
 		 data-y="407" 
 		 data-speed="500" 
 		 data-start="3000" 
-		 data-easing="easeInOutExpo"  >and Much More ...</div>
+		 data-easing="easeInOutExpo"  >and Much More ...</div> -->
 									</li>
 
 
@@ -289,87 +269,32 @@
 @endsection
 
 
-@section('page_level_js') 
+@section('page_level_js')  
     <script type="text/javascript">  
 	var myPlaylist = [ 
+		@foreach($moqdmat as $moqdma)
 		{
-			id:'1',
-			mp3:'http://3.s3.envato.com/files/10407161/preview.mp3',
+			id:'{{$moqdma->id}}',
+			mp3:'{{URL($moqdma->path)}}',
 			oga:'music/5.ogg',
-			title:'Missing You',
-			artist:'Dejans',
+			title:'{{$moqdma->name}}',
+			artist:'{{$moqdma->user->name}}',
 			rating:5,
 			buy:'#',
 			price:'17',
 			duration:'5:25',
 			cover:'music/180x180.jpg'	
-		},
-		{
-			id:'2',
-			mp3:'http://3.s3.envato.com/files/54178721/preview.mp3',
-			oga:'music/4.ogg',
-			title:'Midnight In Tokyo',
-			artist:'BlueFoxMusic',
-			rating:4,
-			buy:'#',
-			price:'17',
-			duration:'2:51',
-			cover:'music/180x180.jpg'	
-		},		
-		{
-			id:'3',
-			mp3:'http://1.s3.envato.com/files/54821639/preview.mp3',
-			oga:'music/1.ogg',
-			title:'Walking On Horizon',
-			artist:'Dejans',
-			rating:5,
-			buy:'#',
-			price:'17',
-			duration:'4:29',
-			cover:'music/180x180.jpg'
-		},
-		{
-			id:'4',
-			mp3:'http://2.s3.envato.com/files/62716273/preview.mp3',
-			oga:'music/6.ogg',
-			title:'A Happy Carefree Day',
-			artist:'JoshKramerMusic',
-			rating:5,
-			buy:'#',
-			price:'13',
-			duration:'2:45',
-			cover:'music/180x180.jpg'	
-		},
-		{
-			id:'5',
-			mp3:'http://3.s3.envato.com/files/41975807/preview.mp3',
-			oga:'music/2.ogg',
-			title:'Through the Clouds',
-			artist:'Dejans',
-			rating:4,
-			buy:'#',
-			price:'17',
-			duration:'5:56',
-			cover:'music/180x180.jpg'	
-		},
-		{
-			id:'6',
-			mp3:'http://3.s3.envato.com/files/2229255/preview.mp3',
-			oga:'music/3.ogg',
-			title:'Live My Life',
-			artist:'Metrolightmusic',
-			rating:5,
-			buy:'#',
-			price:'17',
-			duration:'2:31',
-			cover:'music/180x180.jpg'	
 		}
+		 @if(!$loop->last)
+		 {{ ',' }}
+		 @endif
+		@endforeach
 	];
 	jQuery(document).ready(function ($) {
 		$('.music-player-list').ttwMusicPlayer(myPlaylist, {
 			currencySymbol:'$',
 			buyText:'BUY',
-			tracksToShow:3,
+			tracksToShow:4,
 			autoplay:true,
 			ratingCallback:function(index, playlistItem, rating){ 
 				//
