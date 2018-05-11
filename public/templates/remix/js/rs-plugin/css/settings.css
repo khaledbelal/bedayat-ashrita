@@ -703,3 +703,5 @@
 .tp-3d				{	-webkit-transform-style: preserve-3d;
 						 -webkit-transform-origin: 50% 50%;
 					}
+
+.tp-caption { font-family: "rosemery" !important; }

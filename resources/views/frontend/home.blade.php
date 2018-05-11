@@ -96,8 +96,11 @@
 <!-- End Revolution Slider -->
 
 <div class="page-content">
-<div class="row clearfix mbf">
-	<div class="music-player-list"></div>
+<div class="row row-fluid mbf">
+	<div class="def-block clearfix" style="padding-bottom: 20px;">
+		<h4> مقدمات مختارة </h4><span class="liner"></span>
+		<div class="music-player-list"></div>
+	</div>
 </div><!-- row music player -->
 
 <div class="row row-fluid clearfix mbf"> 
@@ -135,16 +138,27 @@
 			<h4> اخر الاخبار </h4><span class="liner"></span>
 
 			<div class="news row-fluid animtt" data-gen="fadeUp" style="opacity:0;">
-				<div class="span5"><img class="four-radius" src="{{ URL('/templates/remix/images/assets/under_construction.jpg') }}" alt="#"></div>
+				<div class="span5"><img class="four-radius" src="{{ URL('/templates/remix/images/assets/soon.jpg') }}" alt="#"></div>
 				<div class="span7">
-					<h3 class="news-title">جاري تطوير الموقع </h3>
-					<p>جاري العمل على اعداد الموقع بشكل كامل حتى يلائم رغباتكم.</p>
+					<h3 class="news-title">قريبا .. انشئ قائمتك المفضلة</h3>
+					<p>جاري العمل بفضل الله وبعونه العمل على تطوير الموقع باكثر من اتجاه منها تسهيل الاستماع الى مقدماتك المفضلة وحفظها لتعود اليها في اي وقت.</p>
 					<div class="meta">
-						<span> <i class="icon-time mi"></i>12-05-2018 </span> 
+						<span> <i class="icon-time mi"></i>11-05-2018 </span> 
 					</div><!-- meta --> 
 				</div><!-- span7 -->
-			</div><!-- news --> <!-- 
-			<div class="load-news tac"><a href="#" class="tbutton small"><span>Load More</span></a></div> -->
+			</div><!-- news --> 
+
+			<div class="news row-fluid animtt" data-gen="fadeUp" style="opacity:0;">
+				<div class="span5"><img class="four-radius" src="{{ URL('/templates/remix/images/assets/under_construction.jpg') }}" alt="#"></div>
+				<div class="span7">
+					<h3 class="news-title">الموقع تحت التطوير </h3>
+					<p>جاري العمل على اعداد الموقع بشكل كامل حتى يلائم رغباتكم.</p>
+					<div class="meta">
+						<span> <i class="icon-time mi"></i>10-05-2018 </span> 
+					</div><!-- meta --> 
+				</div><!-- span7 -->
+			</div><!-- news --> 
+			<!-- <div class="load-news tac"><a href="#" class="tbutton small"><span>Load More</span></a></div> -->
 		</div><!-- def block -->
 	</div><!-- span8 news -->
 

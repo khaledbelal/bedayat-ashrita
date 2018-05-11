@@ -153,8 +153,10 @@ class MoqdmaController extends Controller
 
     public function increaseView(Request $request)
     { 
+        $moqdma = Moqdma::where('id',$request->moqdma_id)->first();
         $view =  view::create([ 
-            "moqdma_id" => $request->moqdma_id
+            "moqdma_id" => $request->moqdma_id,
+            "sheikh_id" => $moqdma->sheikh->id
         ]); 
 
         if(Auth::check()){

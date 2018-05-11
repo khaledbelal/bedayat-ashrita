@@ -15,7 +15,7 @@ class View extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'moqdma_id', 'user_id'
+        'moqdma_id', 'user_id','sheikh_id'
     ];
  
 }

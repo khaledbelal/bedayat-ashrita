@@ -4,11 +4,20 @@
 }
 
 @font-face {
+    font-family: 'Droid';
+    src: url('./Droid_Arabic_Kufi.ttf');
+}
+@font-face {
+    font-family: 'rosemery';
+    src: url('./rosemery.ttf');
+}
+@font-face {
     font-family: 'abdo';
     src: url('./abdo-free-1.ttf');
 }
-
-.logo {width: auto;margin-top: 12px;text-align: center;}
+ 
+.title {font-family: "rosemery" !important;}
+.logo {width: auto;margin-top: 5px;text-align: center;}
 .logo span {font-family: Morvarid;font-size: 16px !important;color: #FF0078;}
 .logo h1 {font-family: abdo; font-size: 40px !important;color: #FF0078;}
 
@@ -18,7 +27,7 @@
 .player-controls * {direction:ltr}
 .body { direction: rtl; overflow-x: hidden !important }
 .logo, .meta { float: right }
-.sf-menu { float: right; margin: 20px 40px 0 0 }
+.sf-menu { float: right; margin: 15px 40px 0 0 }
 .sf-menu li { float: right;text-align: right }
 .sf-menu a { padding: 0 0 30px 40px }
 .little-head { float: left }
@@ -94,6 +103,7 @@ a.notification-close {left: 20px;right: auto}
 .forum #search-forum button {left: 12px;right: auto}
 .forum #search-forum input {padding: 14px 10px 14px 30px}
 .ie7 .breadcrumbIn, .ie7 .breadcrumbIn li {float: right}
-.ie7 .def-block h4 {float:right;text-align: right;
+.ie7 .def-block h4 {float:right;text-align: right;}
 .ie7 .pagination-tt li {margin: 0 2px;float: right}
 .ie7 nav li {float: left;}
+.duration {float: left !important;}
