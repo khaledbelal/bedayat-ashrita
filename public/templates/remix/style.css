@@ -1878,8 +1878,7 @@ div.blockquote.right {
 	cursor: pointer;
 	color: #9B9B9B;
 	border-left: 0;
-	border-bottom: 0;
-	font-family: "Oswald", Tahoma, Arial;
+	border-bottom: 0; 
 	font-weight: bold;
 	text-transform: uppercase;
 }

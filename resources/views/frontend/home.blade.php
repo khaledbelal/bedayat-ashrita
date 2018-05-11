@@ -12,7 +12,7 @@
 			<ul>
 				<li data-transition="random" data-slotamount="7" data-masterspeed="300" > 
 					<img src="{{ URL('/templates/remix/images/slides/1.jpg') }}" alt="slider" >
-						<a href="">		 
+						<a href="{{route('moqdma-listen',[83])}}">		 
 
 							<div class="tp-caption large_text randomrotate"  
 								 data-x="559" 
@@ -31,7 +31,7 @@
 				</li>
 				<li data-transition="random" data-slotamount="7" data-masterspeed="300" >
 					<img src="{{ URL('/templates/remix/images/slides/2.jpg') }}" alt="slider2" >
-						<a href="">		 					
+						<a href="{{route('moqdma-listen',[142])}}">		 					
 						<div class="tp-caption big_black randomrotate"  
 							 data-x="603" 
 							 data-y="324" 
@@ -49,7 +49,7 @@
 				</li> 
 				<li data-transition="random" data-slotamount="7" data-masterspeed="300" >
 					<img src="{{ URL('/templates/remix/images/slides/3.jpg') }}" alt="slider3" >
-						<a href="">								
+						<a href="{{route('moqdma-listen',[228])}}">								
 							<div class="tp-caption large_text randomrotate"  
 								 data-x="559" 
 								 data-y="253" 

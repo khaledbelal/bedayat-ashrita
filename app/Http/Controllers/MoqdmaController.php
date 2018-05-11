@@ -54,9 +54,8 @@ class MoqdmaController extends Controller
     {   
         $files = File::allFiles('temp_uploads');  
         foreach ($request->server_name as  $key => $server_name){  
-            foreach ($files as $file) {   
-                $file_path_parts = pathinfo($file);   
-                if($server_name == $file_path_parts['filename'].'.'.$file_path_parts['extension']){  
+            foreach ($files as $key_file=>$file) {  
+                if($server_name == $file->getFilename()){  
                     $new_path = 'moqdmat_files/'.$request->sheikh_id[$key];
                     File::makeDirectory($new_path, 0775, true, true);
 
@@ -69,7 +68,7 @@ class MoqdmaController extends Controller
                     ]); 
 
                     if($moqdma){ 
-                        $moqdma->path = $new_path.'/'.$moqdma->id.'.'.$file_path_parts['extension'];
+                        $moqdma->path = $new_path.'/'.$moqdma->id.'.'.$file->getExtension();
                         if($moqdma->save())
                             File::move($file, $moqdma->path);  
                     } 
@@ -88,7 +87,7 @@ class MoqdmaController extends Controller
     public function show($id)
     {   
         $moqdma = Moqdma::where('active',1)->where('id',$id)->first();
-        $sheikh_moqdmat = Moqdma::where('active',1)->where('sheikh_id',$moqdma->sheikh_id)->orderBy('total_views','desc')->limit(10)->get();
+        $sheikh_moqdmat = Moqdma::where('active',1)->where('sheikh_id',$moqdma->sheikh_id)->orderBy('total_views','desc')->limit(6)->get();
         return view('frontend.listen',compact('moqdma','sheikh_moqdmat')); 
     }
 
@@ -205,8 +204,8 @@ class MoqdmaController extends Controller
     public function sheikh($sheikh_id)
     {  
         $moqdma = Moqdma::where('active',1)->where('sheikh_id',$sheikh_id); 
-        $moqdmat_created = $moqdma->orderBy('created_at','asc')->limit(14)->get(); 
-        $moqdmat_total_views = $moqdma->orderBy('total_views','desc')->limit(14)->get(); 
+        $moqdmat_created = $moqdma->orderBy('created_at','asc')->get(); 
+        $moqdmat_total_views = $moqdma->orderBy('total_views','desc')->get(); 
         $moqdmat_best = Moqdma::where('active',1)->orderBy('total_views','desc')->limit(5)->get();
         
         return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views','moqdmat_best')); 

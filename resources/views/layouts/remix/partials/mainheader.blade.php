@@ -2,7 +2,7 @@
 <div class="headdown">
 	<div class="row clearfix">
 		<div class="logo bottomtip" title="اكثر من 400 مقدمة لاكثر من 20 شيخ وعالم">
-			<a href="{{ route('home') }}"><h1><span>إصلاح الجوارح الافئدة من</span><br>مقدمات الأشرطة</h1></a>
+			<a href="{{ route('home') }}"><h1><span>إصلاح الجوارح والافئدة من</span><br>مقدمات الأشرطة</h1></a>
 		</div><!-- end logo -->
 
 		<nav>

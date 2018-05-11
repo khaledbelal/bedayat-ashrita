@@ -90,7 +90,7 @@
 							<ul class="tab-content-items">
 								@foreach($moqdmat_created as $moqdma)
 								<li class="grid_6">
-									<a class="m-thumbnail" href="{{route('moqdma-listen',[$moqdma->id])}}"><img width="50" height="50" src="{{ URL('/templates/remix/images/assets/thumb-mp3-1.jpg')}}" alt="#"></a>
+									<a class="m-thumbnail" href="{{route('moqdma-listen',[$moqdma->id])}}"><img width="50" height="50" src="{{ URL('templates/remix/images/player/album-cover-bg.jpg') }}" alt="#"></a>
 									<h3><a href="{{route('moqdma-listen',[$moqdma->id])}}">{{$moqdma->name}}</a></h3>
 									<span><a href="{{route('sheikh-moqdmat',[$moqdma->sheikh->id])}}"> الشيخ {{$moqdma->sheikh->name}}</a> </span>
 									<span> استمعت {{$moqdma->total_views}} مرة (ات)</span>
