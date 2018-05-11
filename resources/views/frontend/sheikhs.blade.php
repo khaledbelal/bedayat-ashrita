@@ -88,30 +88,12 @@
 						<div class="mp3-albums">
 							@foreach($sheikhs as $sheikh)
 							<a href="{{ route('sheikh-moqdmat',[$sheikh->id]) }}" class="grid_3">
-								<img src="{{ URL('/templates/remix/images/assets/videos1.jpg')}}" alt="#">
+								<img src="{{ URL('/templates/remix/images/assets/no_image.png')}}" alt="#">
 								<span><strong>{{ $sheikh->name }}</strong>{{ $sheikh->moqdamt_count }} مقدمة (ات)</span>
 							</a>
 							@endforeach  
 						</div><!-- mp3 albums -->
-					</li><!-- tab content -->
-
-					<li id="Soon">
-						<p>Nulla id ligula arcu. Integer et tincidunt lectus. Duis id ligula diam, quis dapibus erat. Curabitur nec libero et est vulputate sollicitudin. Fusce sit amet turpis sed mauris volutpat posuere.</p>
-						<div class="news row-fluid">
-							<div class="span5"><img class="four-radius" src="images/assets/news1.jpg" alt="#"></div>
-							<div class="span7">
-								<h3 class="news-title"> Michele Jordan Release New Album in September 2014 </h3>
-								<p>Nine Inch Nails aren't on the bill, and they won't play the fest anytime soon. Soundwave promoter AJ Maddah started a Twitter war-of-words with a few choice comments about NIN's Trent Reznor. mauris volutpat posuere. Morbi vulputate, odio eget adipiscing faucibus, lorem ipsum facilisis justo, gravida tempus orci nisi ac eros. Pellentesque metus dolor.</p>
-							</div><!-- span7 -->
-						</div><!-- news -->
-						<div class="news row-fluid">
-							<div class="span5"><img class="four-radius" src="images/assets/news3.jpg" alt="#"></div>
-							<div class="span7">
-								<h3 class="news-title"> New Track Named Without You (Remix) </h3>
-								<p>Nine Inch Nails aren't on the bill, and they won't play the fest anytime soon. Soundwave promoter AJ Maddah started a Twitter war-of-words with a few choice comments about NIN's Trent Reznor. mauris volutpat posuere. Morbi vulputate, odio eget adipiscing faucibus, lorem ipsum facilisis justo, gravida tempus orci nisi ac eros. Pellentesque metus dolor.</p>
-							</div><!-- span7 -->
-						</div><!-- news -->
-					</li><!-- tab content -->
+					</li><!-- tab content --> 
 
 				</ul><!-- end tabs -->
 
