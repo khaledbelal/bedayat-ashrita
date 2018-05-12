@@ -80,7 +80,7 @@
     <div class="col-lg-12 col-md-12 col-xs-12">
         <div class="card">
             <div class="card-header no-border-bottom">
-                <h4 class="card-title">عدد الاستماع خلال ال 30 يوم الفائت</h4>
+                <h4 class="card-title">اجمالي الاستماع خلال ال 30 يوم الفائت</h4>
                 <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
                 <div class="heading-elements">
                     <ul class="list-inline mb-0">
@@ -103,7 +103,7 @@
 </div>
 
 <div class="row">
-    <div class="col-lg-6 col-md-6 col-xs-6">
+    <div class="col-lg-8 col-md-8 col-xs-8">
         <div class="card">
             <div class="card-header no-border-bottom">
                 <h4 class="card-title">اخر 10 مقدمات تم سماعهم</h4>
