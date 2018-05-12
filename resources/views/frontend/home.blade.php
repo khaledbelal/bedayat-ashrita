@@ -34,14 +34,14 @@
 						<a href="{{route('moqdma-listen',[142])}}">		 					
 						<div class="tp-caption big_black randomrotate"  
 							 data-x="603" 
-							 data-y="324" 
+							 data-y="284" 
 							 data-speed="500" 
 							 data-start="1200" 
 							 data-easing="easeInOutExpo"  >خالد الراشد</div>
 										
 						<div class="tp-caption big_orange randomrotate"  
 							 data-x="701" 
-							 data-y="268" 
+							 data-y="218" 
 							 data-speed="500" 
 							 data-start="1700" 
 							 data-easing="easeInOutExpo"  >   أمي  </div>
@@ -49,20 +49,20 @@
 				</li> 
 				<li data-transition="random" data-slotamount="7" data-masterspeed="300" >
 					<img src="{{ URL('/templates/remix/images/slides/3.jpg') }}" alt="slider3" >
-						<a href="{{route('moqdma-listen',[228])}}">								
+						<a href="{{route('moqdma-listen',[366])}}">								
 							<div class="tp-caption large_text randomrotate"  
 								 data-x="559" 
 								 data-y="253" 
 								 data-speed="500" 
 								 data-start="1000" 
-								 data-easing="easeInOutExpo"  >ربنايون لا رمضانيون</div>
+								 data-easing="easeInOutExpo"  >اخطاؤنا في رمضان</div>
 											
 							<div class="tp-caption medium_text randomrotate"  
 								 data-x="563" 
 								 data-y="313" 
 								 data-speed="500" 
 								 data-start="1500" 
-								 data-easing="easeInOutExpo"  >محمد العريفي</div>
+								 data-easing="easeInOutExpo"  >مسعد أنور</div>
 					 	</a> 
 					<!-- 
 	<div class="tp-caption medium_text randomrotate"  

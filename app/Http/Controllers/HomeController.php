@@ -40,8 +40,10 @@ class HomeController extends Controller
         for ($i=0; $i <= 31; $i++) {  
             $arr_data[date("Y-m-d", strtotime(date("Y-m-d"). " - $i days"))] =  (isset($days[date("Y-m-d", strtotime(date("Y-m-d"). " - $i days"))])) ? $days[date("Y-m-d", strtotime(date("Y-m-d"). " - $i days"))] : 0;
         }
- 
-    	return  view('cpanel.home',compact('total_moqdmat','total_sheikh','total_views','arr_data','views_today')); 
+
+        $last_10_views = View::select([DB::RAW('max(id),moqdma_id,max(created_at) created_at,max(sheikh_id) sheikh_id')])->orderBy('created_at','desc')->groupBy('moqdma_id')->limit(10)->get();
+
+    	return  view('cpanel.home',compact('total_moqdmat','total_sheikh','total_views','arr_data','views_today','last_10_views')); 
     } 
 
     public function cpanelSheikhs(){ 

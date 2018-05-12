@@ -5005,7 +5005,7 @@ a.notification-close {
 	.social-head {margin: 0 10px 0 0}
 	.little-head .search {margin: 10px 0 0 0}
 	.little-head .search input {font-size: 12px;width: 290px !important}
-	.little-head {float: none !important;display: table;margin: 0 auto}
+	.little-head {float: none !important;display: table;margin: 10px auto}
 	#mobilepro { display: block; }
 	.sf-menu a { color: #FFF !important; padding: 0 0 10px 0 }
 	.sf-menu a:hover { background: transparent !important }
@@ -5045,6 +5045,7 @@ a.notification-close {
 	.copyright {text-align: center;float: none !important;margin: 0 auto 20px !important;display: table !important}
 	.foot-menu {float: none !important;margin: 0 auto !important;display: table !important}
 	.under_header {height: 190px}
+	.back_to_up {margin: -160px  0 40px !important}
 	.Alphabet li a {padding: 4px}
 	.tabs li a {margin: 0 10px -1px 0;font-size: 13px;font-weight: normal;}
 	.tp-info, .tp-title {max-width: 100%}

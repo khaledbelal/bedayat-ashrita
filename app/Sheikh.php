@@ -23,7 +23,7 @@ class Sheikh extends Authenticatable
     }
 
 
-    public function moqdamt(){ 
+    public function moqdmat(){ 
         return $this->hasMany(Moqdma::class,'sheikh_id');
     } 
 }	

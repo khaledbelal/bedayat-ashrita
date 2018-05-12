@@ -18,4 +18,13 @@ class View extends Authenticatable
         'moqdma_id', 'user_id','sheikh_id'
     ];
  
+
+    public function moqdma(){ 
+        return $this->belongsTo(Moqdma::class,'moqdma_id');
+    } 
+
+    public function sheikh(){ 
+        return $this->belongsTo(Sheikh::class,'sheikh_id');
+    }
+
 }
