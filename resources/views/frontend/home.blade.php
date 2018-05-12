@@ -115,7 +115,7 @@
 		<div class="def-block widget">
 			<h5> اكثر المقدمات استماعا </h5><span class="liner"></span>
 			<div class="widget-content row-fluid">
-				<div class="scroll-oneperson" style="height: 420px;">
+				<div class="scroll-oneperson" style="height: auto;">
 					<div class="content">
 						<ul class="tab-content-items">
 							@foreach($moqdmat_best as $moqdma)

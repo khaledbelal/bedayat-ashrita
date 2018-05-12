@@ -31,8 +31,7 @@
     <!-- BEGIN Page Level CSS-->
     @yield('page_level_css') 
     <link rel="stylesheet" type="text/css" href="{{ URL('/templates/stack/app-assets/css-rtl/core/menu/menu-types/vertical-menu.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ URL('/templates/stack/app-assets/css-rtl/core/menu/menu-types/vertical-overlay-menu.css') }}"> 
-
+    <link rel="stylesheet" type="text/css" href="{{ URL('/templates/stack/app-assets/css-rtl/core/menu/menu-types/vertical-overlay-menu.css') }}">  
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS--> 
     <link rel="stylesheet" type="text/css" href="{{ URL('/templates/stack/assets/css/style-rtl.css') }}"> 

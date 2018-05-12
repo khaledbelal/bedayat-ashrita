@@ -1,7 +1,7 @@
 @extends('layouts.remix')
 
 @section('title')
-    الاستماع للمقدمة {{ $moqdma->name }}
+    {{ $moqdma->name }} للشيخ {{ $moqdma->sheikh->name }}
 @endsection
 
 @section('content') 
@@ -35,7 +35,7 @@
 			<div class="def-block widget">
 				<h5> الاكثر استماعا ل<span>{{ $moqdma->sheikh->name }}</span> </h5><span class="liner"></span>
 				<div class="widget-content row-fluid">
-					<div class="scroll-oneperson" style="height: 420px;">
+					<div class="scroll-oneperson" style="height: auto;">
 						<div class="content">
 							<ul class="tab-content-items">
 								@foreach($sheikh_moqdmat as $sheikh_moqdma)
@@ -71,18 +71,7 @@
 						<span><i class="icon-user mi"></i> {{$moqdma->user->name}}  </span>
 					</div><!-- meta -->
 
-
-					<!-- <div class="like-post">
-						<div id="fb-root"></div>
-						<script>(function(d, s, id) {
-						  var js, fjs = d.getElementsByTagName(s)[0];
-						  if (d.getElementById(id)) return;
-						  js = d.createElement(s); js.id = id;
-						  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-						  fjs.parentNode.insertBefore(js, fjs);
-						}(document, 'script', 'facebook-jssdk'));</script>
-						<div class="fb-like" data-href="http://developers.facebook.com/docs/reference/plugins/like" data-width="80" data-layout="button_count" data-show-faces="false" data-send="false"></div>
-					</div> --><!-- like -->
+ 
 				</div><!-- post -->
 
 				<!-- Disqus Comment Form -->
@@ -97,8 +86,8 @@
 						})();
 					/* ]]> */
 					</script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
-				<!-- Disqus Comment Form -->
-
+				<!-- Disqus Comment Form --> 
+				<div class="sharethis-inline-share-buttons"></div>
 			</div><!-- def block -->
 		</div><!-- span8 posts -->
 
