@@ -22,8 +22,7 @@ class MoqdmaController extends Controller
     public function index()
     {
         if(Route::currentRouteName() == 'cpanel-moqdmat'){
-            $moqdmat = Moqdma::all();  
-            dd(Auth::user()->type);
+            $moqdmat = Moqdma::all();   
             return view('cpanel.moqdmat.index',compact('moqdmat'));
         }
         else{
