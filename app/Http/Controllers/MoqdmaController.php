@@ -22,7 +22,8 @@ class MoqdmaController extends Controller
     public function index()
     {
         if(Route::currentRouteName() == 'cpanel-moqdmat'){
-            $moqdmat = Moqdma::all(); 
+            $moqdmat = Moqdma::all();  
+            dd(Auth::user()->type);
             return view('cpanel.moqdmat.index',compact('moqdmat'));
         }
         else{
@@ -152,15 +153,25 @@ class MoqdmaController extends Controller
 
     public function increaseView(Request $request)
     { 
-        $moqdma = Moqdma::where('id',$request->moqdma_id)->first();
-        $view =  view::create([ 
-            "moqdma_id" => $request->moqdma_id,
-            "sheikh_id" => $moqdma->sheikh->id
-        ]); 
-
         if(Auth::check()){
-            $view->user_id = Auth::id();
-            $view->save();
+            if(Auth::user()->type=='admin')
+                return 2; 
+            else{
+                $moqdma = Moqdma::where('id',$request->moqdma_id)->first();
+                $view =  view::create([ 
+                    "moqdma_id" => $request->moqdma_id,
+                    "sheikh_id" => $moqdma->sheikh->id,
+                    "user_id" => Auth::id()
+
+                ]);  
+            }
+        }
+        else{
+            $moqdma = Moqdma::where('id',$request->moqdma_id)->first();
+            $view =  view::create([ 
+                "moqdma_id" => $request->moqdma_id,
+                "sheikh_id" => $moqdma->sheikh->id
+            ]);  
         } 
 
         if($view)

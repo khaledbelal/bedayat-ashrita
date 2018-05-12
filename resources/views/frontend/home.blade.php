@@ -141,7 +141,7 @@
 				<div class="span5"><img class="four-radius" src="{{ URL('/templates/remix/images/assets/soon.jpg') }}" alt="#"></div>
 				<div class="span7">
 					<h3 class="news-title">قريبا .. انشئ قائمتك المفضلة</h3>
-					<p>جاري العمل بفضل الله وبعونه العمل على تطوير الموقع باكثر من اتجاه منها تسهيل الاستماع الى مقدماتك المفضلة وحفظها لتعود اليها في اي وقت.</p>
+					<p>جاري العمل بفضل الله وبعونه على تطوير الموقع باكثر من اتجاه منها تسهيل الاستماع الى مقدماتك المفضلة وحفظها لتعود اليها في اي وقت.</p>
 					<div class="meta">
 						<span> <i class="icon-time mi"></i>11-05-2018 </span> 
 					</div><!-- meta --> 
@@ -177,7 +177,7 @@
 			mp3:'{{URL($moqdma->path)}}',
 			oga:'music/5.ogg',
 			title:'{{$moqdma->name}}',
-			artist:'{{$moqdma->user->name}}',
+			artist:'{{$moqdma->sheikh->name}}',
 			rating:5,
 			buy:'#',
 			price:'17',

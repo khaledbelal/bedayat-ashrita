@@ -115,7 +115,7 @@
 			mp3:'{{URL($moqdma->path)}}',
 			oga:'music/5.ogg',
 			title:'{{$moqdma->name}}',
-			artist:'{{$moqdma->user->name}}',
+			artist:'{{$moqdma->sheikh->name}}',
 			rating:5,
 			buy:'#',
 			price:'17',
