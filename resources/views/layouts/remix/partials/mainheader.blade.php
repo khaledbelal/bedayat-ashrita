@@ -17,5 +17,16 @@
 				<li class="{{(Route::currentRouteName() == 'contact') ? 'current selectedLava' : ''}}"><a href="{{ route('contact') }}">اتصل بنا<span class="sub">يشرفنا محادثتك</span></a></li>  
 			</ul><!-- end menu -->
 		</nav><!-- end nav -->
+		<div class="little-head">
+		<!-- <div id="Login_PopUp_Link" class="sign-btn tbutton small"><span>Sign In</span></div> -->
+ 
+		<div class="search">
+			<form action="{{route('moqdmat-search')}}" id="search" method="post">
+				<input id="inputhead" name="search" type="text" onfocus="if (this.value=='ابحث الان ...') this.value = '';" onblur="if (this.value=='') this.value = 'ابحث الان ...';" value="ابحث الان ..." placeholder="ابحث الان ...">
+				<button type="submit"><i class="icon-search"></i></button>
+                {{ csrf_field() }} 
+			</form><!-- end form -->
+		</div><!-- search -->
+	</div><!-- little head -->
 	</div><!-- row -->
 </div><!-- headdown -->

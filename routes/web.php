@@ -48,6 +48,7 @@ Route::get('/moqdmat', 'MoqdmaController@index')->name('all-moqdmat');
 Route::get('/moqdmat/sheikh/{slug}', 'MoqdmaController@sheikh')->name('sheikh-moqdmat');
 Route::get('/moqdmat/filter/{slug}', 'MoqdmaController@filter')->name('moqdmat-filter');
 Route::get('/moqdmat/listen/{slug}', 'MoqdmaController@show')->name('moqdma-listen');
+Route::post('/moqdmat/search', 'MoqdmaController@search')->name('moqdmat-search');
 
 //Sheikhs
 Route::get('/sheikhs', 'SheikhController@index')->name('all-sheikhs');

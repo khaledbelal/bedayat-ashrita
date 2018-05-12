@@ -220,4 +220,23 @@ class MoqdmaController extends Controller
         
         return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views','moqdmat_best')); 
     }
+
+    public function search(Request $request)
+    {  
+        $moqdma = Moqdma::where('active',1); 
+        $arr_string = explode(' ', $request->search); 
+         
+        $moqdma = $moqdma->Where(function ($query) use($arr_string) {
+            for ($i = 0; $i < count($arr_string); $i++){
+                if(trim($arr_string[$i]))
+                    $query->orwhere('name', 'like','%'.$arr_string[$i] .'%');
+            }      
+        });
+        $moqdmat_created = $moqdma->orderBy('created_at','desc')->get(); 
+        $moqdmat_total_views = $moqdma->orderBy('total_views','desc')->get(); 
+        $moqdmat_best = Moqdma::where('active',1)->orderBy('total_views','desc')->limit(6)->get();
+        
+        return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views','moqdmat_best')); 
+    }
+
 }
