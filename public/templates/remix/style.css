@@ -1321,7 +1321,7 @@ li.track:hover .buy, .playing .buy {
 	border-bottom: 1px solid #080808;
 	box-shadow: 0 1px 0 rgba(34, 34, 34, 0.8);
 	-webkit-box-shadow: 0 1px 0 rgba(34, 34, 34, 0.8);
-	margin: 0 0 40px;
+	margin: 0 0 10px;
 }
 .post .post-title {
 	margin: 20px 0;

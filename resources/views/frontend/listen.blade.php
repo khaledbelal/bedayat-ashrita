@@ -39,8 +39,13 @@
 						<span> <i class="icon-time mi"></i>  {{ date('Y-m-d H:i',strtotime($moqdma->created_at))}} </span>
 						<span><i class="icon-user mi"></i> {{$moqdma->user->name}}  </span>
 					</div><!-- meta -->
-
- 
+					<div class=" clearfix"></div>
+	 				<div class=" row-fluid clearfix"> 	 
+						<p class="news-title" style="text-align: center;margin-top: 20px;"><label style="color: #FF0078; cursor: default;">- شارك وانشر يكن في ميزان حسناتك بإذن الله - </label>روى عن أبي هريرة رضي الله عنه عن النبي صلى الله عليه وسلم أنه قال: <label style="color: #fff; cursor: default;">« من دعا إلى هدى كان له من الأجر مثل أجور من تبعه لا ينقص ذلك من أجورهم شيئا ومن دعا إلى ضلالة كان عليه من الإثم مثل آثام من تبعه لا ينقص ذلك من آثامهم شيئا »</label> (أخرجه مسلم في صحيحه). </p> 
+					</div>
+					<div class=" row-fluid clearfix" style="margin-top: 20px;">
+						<div class="sharethis-inline-share-buttons"></div> 
+					</div>
 				</div><!-- post -->
 
 				<!-- Disqus Comment Form -->
@@ -56,7 +61,7 @@
 					/* ]]> */
 					</script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
 				<!-- Disqus Comment Form --> 
-				<div class="sharethis-inline-share-buttons"></div>
+				
 			</div><!-- def block -->
 		</div><!-- span8 posts -->
 
@@ -71,7 +76,7 @@
 			</div>  -->
 			
 			<div class="def-block widget">
-				<h5> الاكثر استماعا ل<span>{{ $moqdma->sheikh->name }}</span> </h5><span class="liner"></span>
+				<h5> الاكثر استماعا ل{{ $moqdma->sheikh->name }}</h5><span class="liner"></span>
 				<div class="widget-content row-fluid">
 					<div class="scroll-oneperson" style="height: auto;">
 						<div class="content">
