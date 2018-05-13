@@ -89,7 +89,7 @@
 							@foreach($sheikhs as $sheikh)
 							<a href="{{ route('sheikh-moqdmat',[$sheikh->id]) }}" class="grid_3">
 								<img src="{{ URL('/templates/remix/images/assets/no_image.png')}}" alt="#">
-								<span><strong>{{ $sheikh->name }}</strong>{{ $sheikh->moqdamt_count }} مقدمة (ات)</span>
+								<span><strong>{{ $sheikh->name }}</strong>{{ $sheikh->moqdmat_count }} مقدمة (ات)</span>
 							</a>
 							@endforeach  
 						</div><!-- mp3 albums -->

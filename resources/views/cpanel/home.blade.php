@@ -92,7 +92,7 @@
             <div class="card-body collapse in">
                 <div class="card-block"> 
                     <div class="row">
-                        <div class="col-xs-12"> 
+                        <div class="col-xs-12 table-responsive"> 
                             <div id="area-chart" class="height-250"></div> 
                         </div>
                     </div>
@@ -103,7 +103,7 @@
 </div>
 
 <div class="row">
-    <div class="col-lg-8 col-md-8 col-xs-8">
+    <div class="col-lg-6 col-md-12 col-xs-12">
         <div class="card">
             <div class="card-header no-border-bottom">
                 <h4 class="card-title">اخر 10 مقدمات تم سماعهم</h4>
@@ -121,16 +121,48 @@
                         <thead>
                             <tr>
                               <th>المقدمة</th>
-                              <th>الشيخ</th>
                               <th>التاريخ</th>
                             </tr>
                         </thead>
                         <tbody>  
 		                	@foreach($last_10_views as $view)
 		                   	<tr>
-		                        <td> {{$view->moqdma->name}} </td>
-		                        <td>{{$view->sheikh->name}} </td>
-		                        <td>{{date('Y-m-d H:i',strtotime($view->created_at))}} </td>
+		                        <td> {{$view->moqdma->name}} - {{$view->sheikh->name}} </td> 
+		                        <td>{{date('m-d h:i A',strtotime($view->created_at))}} </td>
+		                    </tr>
+		                    @endforeach 
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-xs-12">
+        <div class="card">
+            <div class="card-header no-border-bottom">
+                <h4 class="card-title">اكثر 10 مقدمات استماعا</h4>
+                <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                        <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body collapse in">
+                <div class="card-block"> 
+                	<table class="table table-striped table-bordered zero-configuration">
+                        <thead>
+                            <tr>
+                              <th>المقدمة</th>
+                              <th>مرات الاستماع</th>
+                            </tr>
+                        </thead>
+                        <tbody>  
+		                	@foreach($best_10_views as $moqdma)
+		                   	<tr>
+		                        <td> {{$moqdma->name}} - {{$moqdma->sheikh->name}} </td> 
+		                        <td>{{$moqdma->total_views}} مرة (ات) </td>
 		                    </tr>
 		                    @endforeach 
                     </table>
