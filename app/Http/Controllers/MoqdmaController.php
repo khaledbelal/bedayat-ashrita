@@ -27,9 +27,8 @@ class MoqdmaController extends Controller
         }
         else{
             $moqdmat_created = Moqdma::where('active',1)->orderBy('created_at','desc')->limit(14)->get(); 
-            $moqdmat_total_views = Moqdma::where('active',1)->orderBy('total_views','desc')->limit(14)->get(); 
-            $moqdmat_best = Moqdma::where('active',1)->orderBy('total_views','desc')->limit(6)->get();
-            return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views','moqdmat_best')); 
+            $moqdmat_total_views = Moqdma::where('active',1)->orderBy('total_views','desc')->limit(14)->get();  
+            return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views')); 
         }
     }
 
@@ -205,20 +204,18 @@ class MoqdmaController extends Controller
             $moqdma = $moqdma->Where('name', 'like',$string .'%');
 
         $moqdmat_created = $moqdma->orderBy('created_at','desc')->get(); 
-        $moqdmat_total_views = $moqdma->orderBy('total_views','desc')->get(); 
-        $moqdmat_best = Moqdma::where('active',1)->orderBy('total_views','desc')->limit(6)->get();
+        $moqdmat_total_views = $moqdma->orderBy('total_views','desc')->get();  
         
-        return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views','moqdmat_best')); 
+        return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views')); 
     }
 
     public function sheikh($sheikh_id)
     {  
         $moqdma = Moqdma::where('active',1)->where('sheikh_id',$sheikh_id); 
         $moqdmat_created = $moqdma->orderBy('created_at','desc')->get(); 
-        $moqdmat_total_views = $moqdma->orderBy('total_views','desc')->get(); 
-        $moqdmat_best = Moqdma::where('active',1)->orderBy('total_views','desc')->limit(6)->get();
+        $moqdmat_total_views = $moqdma->orderBy('total_views','desc')->get();  
         
-        return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views','moqdmat_best')); 
+        return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views')); 
     }
 
     public function search(Request $request)
@@ -233,10 +230,9 @@ class MoqdmaController extends Controller
             }      
         });
         $moqdmat_created = $moqdma->orderBy('created_at','desc')->get(); 
-        $moqdmat_total_views = $moqdma->orderBy('total_views','desc')->get(); 
-        $moqdmat_best = Moqdma::where('active',1)->orderBy('total_views','desc')->limit(6)->get();
+        $moqdmat_total_views = $moqdma->orderBy('total_views','desc')->get();  
         
-        return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views','moqdmat_best')); 
+        return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views')); 
     }
 
 }

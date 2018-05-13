@@ -23,10 +23,9 @@ class SheikhController extends Controller
             $sheikhs = Sheikh::withCount('moqdmat')->orderby('name','asc')->get();
             return view('cpanel.sheikhs.index',compact('sheikhs'));
         }
-        else{ 
-            $moqdmat_best = Moqdma::where('active',1)->orderBy('total_views','desc')->limit(5)->get(); 
+        else{  
             $sheikhs = Sheikh::where('active',1)->withCount('moqdmat')->orderby('name','asc')->get();
-            return view('frontend.sheikhs',compact('sheikhs','moqdmat_total_views','moqdmat_best')); 
+            return view('frontend.sheikhs',compact('sheikhs','moqdmat_total_views')); 
         }
     }
 
@@ -143,9 +142,8 @@ class SheikhController extends Controller
         else
             $sheikh = $sheikh->Where('name', 'like',$string .'%');
 
-        $sheikhs = $sheikh->withCount('moqdmat')->orderby('name','asc')->get();
-        $moqdmat_best = Moqdma::where('active',1)->orderBy('total_views','desc')->limit(5)->get();
+        $sheikhs = $sheikh->withCount('moqdmat')->orderby('name','asc')->get(); 
         
-        return view('frontend.sheikhs',compact('sheikhs','moqdmat_total_views','moqdmat_best')); 
+        return view('frontend.sheikhs',compact('sheikhs','moqdmat_total_views')); 
     }
 }

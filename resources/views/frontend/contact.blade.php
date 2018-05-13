@@ -10,9 +10,7 @@
 </div><!-- under header -->
 
 <div class="page-content back_to_up " > 
-	<div class="row row-fluid clearfix ">
-		<div class="span6 animtt" data-gen="fadeUp">
-		</div>
+	<div class="row row-fluid clearfix "> 
 		<div class="span6 animtt" data-gen="fadeUp"  style="opacity:0;">
 			<div class="def-block" >
 				<h4> إعتذار </h4><span class="liner"></span> 

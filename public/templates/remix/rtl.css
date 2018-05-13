@@ -109,3 +109,6 @@ a.notification-close {left: 20px;right: auto}
 .duration {float: left !important;}
 .mp3-albums{text-align: center;}
 .mp3-albums img{width: 90%;text-align: center; margin: 0 auto}
+
+.row-fluid [class*="span"]{ float: right !important;margin-left: 2.564102564102564% ! important;margin-right :0 ! important; } 
+.row-fluid [class*="span"]:last-child {margin-left: 0 !important;}
