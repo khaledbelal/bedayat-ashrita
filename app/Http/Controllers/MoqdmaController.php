@@ -25,10 +25,17 @@ class MoqdmaController extends Controller
             $moqdmat = Moqdma::all();   
             return view('cpanel.moqdmat.index',compact('moqdmat'));
         }
-        else{
-            $moqdmat_created = Moqdma::where('active',1)->orderBy('created_at','desc')->limit(14)->get(); 
-            $moqdmat_total_views = Moqdma::where('active',1)->orderBy('total_views','desc')->limit(14)->get();  
-            return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views')); 
+        else{ 
+            $moqdma = Moqdma::where('active',1)->limit(20);
+
+            $moqdmat = clone $moqdma;
+            $moqdmat_created = clone $moqdma;
+            $moqdmat_total_views = clone $moqdma;
+
+            $moqdmat = $moqdmat->orderBy('name','asc')->get(); 
+            $moqdmat_created = $moqdmat_created->orderBy('created_at','desc')->get(); 
+            $moqdmat_total_views = $moqdmat_total_views->orderBy('total_views','desc')->get();  
+            return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views','moqdmat')); 
         }
     }
 
@@ -203,19 +210,31 @@ class MoqdmaController extends Controller
         else
             $moqdma = $moqdma->Where('name', 'like',$string .'%');
 
-        $moqdmat_created = $moqdma->orderBy('created_at','desc')->get(); 
-        $moqdmat_total_views = $moqdma->orderBy('total_views','desc')->get();  
+        $moqdmat = clone $moqdma;
+        $moqdmat_created = clone $moqdma;
+        $moqdmat_total_views = clone $moqdma;
+
+        $moqdmat = $moqdmat->orderBy('name','asc')->get(); 
+        $moqdmat_created = $moqdmat_created->orderBy('created_at','desc')->get(); 
+        $moqdmat_total_views = $moqdmat_total_views->orderBy('total_views','desc')->get();  
         
-        return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views')); 
+        return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views','moqdmat','string')); 
     }
 
     public function sheikh($sheikh_id)
     {  
         $moqdma = Moqdma::where('active',1)->where('sheikh_id',$sheikh_id); 
-        $moqdmat_created = $moqdma->orderBy('created_at','desc')->get(); 
-        $moqdmat_total_views = $moqdma->orderBy('total_views','desc')->get();  
+        $sheikh_name = Sheikh::where('id',$sheikh_id)->first(); 
+
+        $moqdmat = clone $moqdma;
+        $moqdmat_created = clone $moqdma;
+        $moqdmat_total_views = clone $moqdma;
+
+        $moqdmat = $moqdmat->orderBy('name','asc')->get(); 
+        $moqdmat_created = $moqdmat_created->orderBy('created_at','desc')->get(); 
+        $moqdmat_total_views = $moqdmat_total_views->orderBy('total_views','desc')->get();  
         
-        return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views')); 
+        return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views','moqdmat','sheikh_name')); 
     }
 
     public function search(Request $request)
@@ -229,10 +248,15 @@ class MoqdmaController extends Controller
                     $query->orwhere('name', 'like','%'.$arr_string[$i] .'%');
             }      
         });
-        $moqdmat_created = $moqdma->orderBy('created_at','desc')->get(); 
-        $moqdmat_total_views = $moqdma->orderBy('total_views','desc')->get();  
+        $moqdmat = clone $moqdma;
+        $moqdmat_created = clone $moqdma;
+        $moqdmat_total_views = clone $moqdma;
+
+        $moqdmat = $moqdmat->orderBy('name','asc')->get(); 
+        $moqdmat_created = $moqdmat_created->orderBy('created_at','desc')->get(); 
+        $moqdmat_total_views = $moqdmat_total_views->orderBy('total_views','desc')->get();  
         
-        return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views')); 
+        return view('frontend.moqdmat',compact('moqdmat_created','moqdmat_total_views','moqdmat'))->with('search',$request->search); 
     }
 
 }

@@ -51,13 +51,40 @@
 
 		<div class="span8 posts">
 			<div class="def-block">
+				@if(Route::currentRouteName() == 'moqdmat-search' ) 
+					<h4 style="margin-bottom: 10px;">نتائج البحث عن « {{ $search }} » :</h4> 
+				@elseif(Route::currentRouteName() == 'moqdmat-filter')
+					<h4 style="margin-bottom: 10px;">التصفية بحرف الـ « {{ $string }} » :</h4>    
+				@elseif(Route::currentRouteName() == 'sheikh-moqdmat')
+					<h4 style="margin-bottom: 10px;">مقدمات الشيخ « {{ $sheikh_name->name }} » :</h4>   
+				@endif
 				<ul class="tabs">
-					<li><a href="#Latest" class="active"> الأحدث اضافة</a></li>
-					<li><a href="#Featured"> الأكثر استماعا </a></li> 
+					@if(Route::currentRouteName() != 'all-moqdmat' ) 
+					<li><a href="#alphabet" class="active">ابجدي</a></li> 
+					@endif
+					<li><a href="#new" class="{{(Route::currentRouteName() == 'all-moqdmat') ? 'active' : ''}}"> الأحدث اضافة</a></li>
+					<li><a href="#views"> الأكثر استماعا </a></li> 
 				</ul><!-- tabs -->
+ 
+				
 
 				<ul class="tabs-content">
-					<li id="Latest" class="active">
+					<li id="alphabet" class="active">
+						<div class="post no-border no-mp clearfix">
+							<ul class="tab-content-items">
+								@foreach($moqdmat as $moqdma)
+								<li class="grid_6">
+									<a class="m-thumbnail" href="{{route('moqdma-listen',[$moqdma->id])}}"><img width="50" height="50" src="{{ URL('templates/remix/images/player/album-cover-bg.jpg') }}" alt="#"></a>
+									<h3><a href="{{route('moqdma-listen',[$moqdma->id])}}">{{$moqdma->name}}</a></h3>
+									<span><a href="{{route('sheikh-moqdmat',[$moqdma->sheikh->id])}}"> الشيخ {{$moqdma->sheikh->name}}</a> </span>
+									<span> استمعت {{$moqdma->total_views}} مرة (ات)</span>
+								</li>
+								@endforeach 
+							</ul>
+						</div><!-- latest -->
+					</li><!-- tab content -->
+
+					<li id="new">
 						<div class="post no-border no-mp clearfix">
 							<ul class="tab-content-items">
 								@foreach($moqdmat_created as $moqdma)
@@ -72,12 +99,12 @@
 						</div><!-- latest -->
 					</li><!-- tab content -->
 
-					<li id="Featured">
+					<li id="views">
 						<div class="post no-border no-mp clearfix">
 							<ul class="tab-content-items">
 								@foreach($moqdmat_total_views as $moqdma)
 								<li class="grid_6">
-									<a class="m-thumbnail" href="{{route('moqdma-listen',[$moqdma->id])}}"><img width="50" height="50" src="{{ URL('/templates/remix/images/assets/thumb-mp3-1.jpg')}}" alt="#"></a>
+									<a class="m-thumbnail" href="{{route('moqdma-listen',[$moqdma->id])}}"><img width="50" height="50" src="{{ URL('templates/remix/images/player/album-cover-bg.jpg') }}" alt="#"></a>
 									<h3><a href="{{route('moqdma-listen',[$moqdma->id])}}">{{$moqdma->name}}</a></h3>
 									<span><a href="{{route('sheikh-moqdmat',[$moqdma->sheikh->id])}}"> الشيخ {{$moqdma->sheikh->name}}</a> </span>
 									<span> استمعت {{$moqdma->total_views}} مرة (ات)</span>
