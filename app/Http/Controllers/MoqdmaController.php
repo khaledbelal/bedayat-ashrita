@@ -239,15 +239,21 @@ class MoqdmaController extends Controller
 
     public function search(Request $request)
     {  
-        $moqdma = Moqdma::where('active',1); 
+        $moqdma = Moqdma::where('active',1)->where('name', 'like','%'.$request->search .'%'); 
         $arr_string = explode(' ', $request->search); 
-         
-        $moqdma = $moqdma->Where(function ($query) use($arr_string) {
-            for ($i = 0; $i < count($arr_string); $i++){
-                if(trim($arr_string[$i]))
-                    $query->orwhere('name', 'like','%'.$arr_string[$i] .'%');
-            }      
-        });
+        
+        
+            $moqdma = $moqdma->Where(function ($query) use($arr_string,$request) {
+                if(count($arr_string) < 3 ){
+                    for ($i = 0; $i < count($arr_string); $i++){
+                        if(trim($arr_string[$i]))
+                            $query->orwhere('name', 'like','%'.$arr_string[$i] .'%');
+                    }      
+                }
+                else
+                    $query->orwhere('name', 'like','%'.$request->search.'%');
+                
+            });
         $moqdmat = clone $moqdma;
         $moqdmat_created = clone $moqdma;
         $moqdmat_total_views = clone $moqdma;
