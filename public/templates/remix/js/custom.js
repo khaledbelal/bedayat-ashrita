@@ -436,8 +436,7 @@ jQuery(document).ready(function ($) {
 					$("#contactForm #sendMessage").attr("disabled", "disabled").val('جاري االارسال فضلا انتظر قليلا ...');
 				});
 				var formInput = $(this).serialize();
-				$.post($(this).attr('action'), formInput, function (data) {
-					alert(data);
+				$.post($(this).attr('action'), formInput, function (data) { 
 					if(data == 'success'){ 
 						$('#contactForm').slideUp("normal", function () {
 							$(this).before('<div class="notification-box notification-box-success"><p><i class="icon-ok"></i>شكرا لك !</strong> تم ارسال رسالتك بنجاح .. </p></div>');

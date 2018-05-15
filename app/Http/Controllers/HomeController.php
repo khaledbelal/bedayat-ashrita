@@ -61,12 +61,11 @@ class HomeController extends Controller
     } 
 
     public function sendMessage(Request $request)
-    {  
-        return $request->senderEmail;
+    {   
         // Define some constants
         $my_name = "khaledbelal";
         $my_mail = "me@khaledbelal.net";
-        $subject = "رسالة من ".$request->senderName;
+        $subject = "مقدمات الاشرطة - رسالة من ".$request->senderName;
 
         // Read the form values
         $success = false;
