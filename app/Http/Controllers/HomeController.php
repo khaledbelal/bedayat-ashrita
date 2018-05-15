@@ -60,10 +60,34 @@ class HomeController extends Controller
         return  view('frontend.contact'); 
     } 
 
+    public function sendMessage(Request $request)
+    {  
+        return $request->senderEmail;
+        // Define some constants
+        $my_name = "khaledbelal";
+        $my_mail = "me@khaledbelal.net";
+        $subject = "رسالة من ".$request->senderName;
+
+        // Read the form values
+        $success = false;
+        $senderName = isset( $request->senderName ) ? preg_replace( "/[^\.\-\' a-zA-Z0-9]/", "", $request->senderName ) : "";
+        $senderEmail = isset( $request->senderEmail ) ? preg_replace( "/[^\.\-\_\@a-zA-Z0-9]/", "", $request->senderEmail ) : "";
+        $message = isset( $request->message ) ? preg_replace( "/(From:|To:|BCC:|CC:|Subject:|Content-Type:)/", "", $request->message ) : "";
+
+        // If all values exist, send the email
+        if ( $senderName && $senderEmail && $message ) {
+            $recipient = $my_name . " <" . $my_mail . ">";
+            $headers = "From: " . $senderName . " <" . $senderEmail . ">";
+            $success = mail( $recipient, $subject, $message, $headers );
+        }
+
+        return ($success) ? "success" : "error";
+    }
+
     public function index()
     { 
         $moqdmat = Moqdma::where('active',1)->orderByRaw("RAND()")->limit(10)->get();  
-        $moqdmat_best = Moqdma::where('active',1)->orderBy('total_views','desc')->limit(5)->get();
+        $moqdmat_best = Moqdma::where('active',1)->orderBy('total_views','desc')->limit(6)->get();
     	return view('frontend.home',compact('moqdmat','moqdmat_best')); 
     } 
 }

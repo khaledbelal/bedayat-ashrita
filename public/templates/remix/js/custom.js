@@ -418,14 +418,14 @@ jQuery(document).ready(function ($) {
 				if (jQuery.trim($(this).val()) === '') {
 					var labelText = $(this).prev('label').text();
 					$(this).addClass('fielderror');
-					$('#contactForm span').html('<strong>*Please fill out all fields.</strong>');
+					$('#contactForm span').html('<strong>*جميع الحقول مطلوبة.</strong>');
 					hasError = true;
 				} else if ($(this).hasClass('email')) {
 					var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 					if (!emailReg.test(jQuery.trim($(this).val()))) {
 						var labelText = $(this).prev('label').text();
 						$(this).addClass('fielderror');
-						$('#contactForm span').html('<strong>Is incorrect your email address</strong>');
+						$('#contactForm span').html('<strong>افضلا اكتب البريد الالكتروني بشكل صحيح</strong>');
 						hasError = true;
 					}
 				}
@@ -433,13 +433,24 @@ jQuery(document).ready(function ($) {
 			if (!hasError) {
 				$('#contactForm').slideDown('normal', function () {
 					$("#contactForm #sendMessage").addClass('load-color');
-					$("#contactForm #sendMessage").attr("disabled", "disabled").val('Sending message. Please wait...');
+					$("#contactForm #sendMessage").attr("disabled", "disabled").val('جاري االارسال فضلا انتظر قليلا ...');
 				});
 				var formInput = $(this).serialize();
 				$.post($(this).attr('action'), formInput, function (data) {
-					$('#contactForm').slideUp("normal", function () {
-						$(this).before('<div class="notification-box notification-box-success"><p><i class="icon-ok"></i>Thanks!</strong> Your email was successfully sent. We check Our email all the time, so we should be in touch soon.</p></div>');
-					});
+					alert(data);
+					if(data == 'success'){ 
+						$('#contactForm').slideUp("normal", function () {
+							$(this).before('<div class="notification-box notification-box-success"><p><i class="icon-ok"></i>شكرا لك !</strong> تم ارسال رسالتك بنجاح .. </p></div>');
+						});
+					}
+					else{
+						$('#contactForm').slideUp("normal", function () {
+							$(this).before('<div class="notification-box notification-box-error"><p><i class="icon-remove"></i>عذرا !</strong> حدث خطأ عند الارسال .. الرجاء المحاولة لاحقا</p></div>');
+						});
+						$("#contactForm #sendMessage").removeClass('load-color');
+						$("#contactForm #sendMessage").removeAttr( "disabled").val('ارسال الرسالة');
+
+					}
 				});
 			}
 			return false;
