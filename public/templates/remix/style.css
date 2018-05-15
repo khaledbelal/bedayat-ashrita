@@ -2816,10 +2816,10 @@ html[xmlns] .slides {display: block;}
 	float: right;
 }
 #contactForm .flr {
-	margin: 0 0 10px 0 !important;
+	margin: 0 10px 0 0 !important;
 }
 #contactForm .fll {
-	margin: 0 0px 10px 0 !important;
+	margin: 0 0 0px 15px !important;
 }
 #contactForm #senderName:focus, 
 #contactForm #senderEmail:focus, 

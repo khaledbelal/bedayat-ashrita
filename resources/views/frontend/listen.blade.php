@@ -76,7 +76,7 @@
 			</div>  -->
 			
 			<div class="def-block widget">
-				<h5> الاكثر استماعا ل{{ $moqdma->sheikh->name }}</h5><span class="liner"></span>
+				<h4> الاكثر استماعا ل{{ $moqdma->sheikh->name }}</h4><span class="liner"></span>
 				<div class="widget-content row-fluid">
 					<div class="scroll-oneperson" style="height: auto;">
 						<div class="content">

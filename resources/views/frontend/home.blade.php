@@ -109,7 +109,6 @@
 			<h4> اخر الاخبار </h4><span class="liner"></span>
 
 			<div class="news row-fluid animtt" data-gen="fadeUp" style="opacity:0;">
-				<div class="span5"><img class="four-radius" src="{{ URL('/templates/remix/images/assets/soon.jpg') }}" alt="#"></div>
 				<div class="span7">
 					<h3 class="news-title">قريبا .. انشئ قائمتك المفضلة</h3>
 					<p>جاري العمل بفضل الله وبعونه على تطوير الموقع باكثر من اتجاه منها تسهيل الاستماع الى مقدماتك المفضلة وحفظها لتعود اليها في اي وقت.</p>
@@ -117,10 +116,10 @@
 						<span> <i class="icon-time mi"></i>11-05-2018 </span> 
 					</div><!-- meta --> 
 				</div><!-- span7 -->
+				<div class="span5"><img class="four-radius" src="{{ URL('/templates/remix/images/assets/soon.jpg') }}" alt="#"></div>
 			</div><!-- news --> 
 
 			<div class="news row-fluid animtt" data-gen="fadeUp" style="opacity:0;">
-				<div class="span5"><img class="four-radius" src="{{ URL('/templates/remix/images/assets/under_construction.jpg') }}" alt="#"></div>
 				<div class="span7">
 					<h3 class="news-title">الموقع تحت التطوير </h3>
 					<p>جاري العمل على اعداد الموقع بشكل كامل حتى يلائم رغباتكم.</p>
@@ -128,6 +127,7 @@
 						<span> <i class="icon-time mi"></i>10-05-2018 </span> 
 					</div><!-- meta --> 
 				</div><!-- span7 -->
+				<div class="span5"><img class="four-radius" src="{{ URL('/templates/remix/images/assets/under_construction.jpg') }}" alt="#"></div>
 			</div><!-- news --> 
 			<!-- <div class="load-news tac"><a href="#" class="tbutton small"><span>Load More</span></a></div> -->
 		</div><!-- def block -->
@@ -142,7 +142,7 @@
 		</div>  -->
 
 		<div class="def-block widget">
-			<h5> اكثر المقدمات استماعا </h5><span class="liner"></span>
+			<h4> اكثر المقدمات استماعا </h4><span class="liner"></span>
 			<div class="widget-content row-fluid">
 				<div class="scroll-oneperson" style="height: auto;">
 					<div class="content">
@@ -151,7 +151,7 @@
 							<li>
 								<a class="m-thumbnail" href="{{route('moqdma-listen',[$moqdma->id])}}"><img width="50" height="50" src="{{ URL('templates/remix/images/player/album-cover-bg.jpg') }}" alt="#"></a>
 								<h3><a href="{{route('moqdma-listen',[$moqdma->id])}}">{{$moqdma->name}}</a></h3>
-								<span> {{$moqdma->sheikh->name}} </span>
+								<span><a href="{{route('sheikh-moqdmat',[$moqdma->sheikh->id])}}">{{$moqdma->sheikh->name}}</a> </span>
 								<span> استمعت {{$moqdma->total_views}} مرة (ات) </span>
 							</li>
 							@endforeach
