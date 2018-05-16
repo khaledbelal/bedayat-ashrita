@@ -112,3 +112,8 @@ a.notification-close {left: 20px;right: auto}
 
 .row-fluid [class*="span"]{ float: right !important;margin-left: 2.564102564102564% ! important;margin-right :0 ! important; } 
 .row-fluid [class*="span"]:last-child {margin-left: 0 !important;}
+
+.news_pic{float:left;margin-right: 20px;margin-bottom: 10px;width: 40%; }
+@media only screen and (min-width: 100px) and (max-width: 479px) {
+	.news_pic{margin-right: 0;width: 100%;}
+}
