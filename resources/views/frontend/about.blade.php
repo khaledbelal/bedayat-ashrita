@@ -15,7 +15,7 @@
 			<div class="def-block "  >
 				<h4> عن الموقع </h4><span class="liner"></span> 
 				<div class="news row-fluid ">  
-					<img class="four-radius news_pic" src="{{ URL('/images/tape.png') }}" alt="#" style="f">
+					<img class="four-radius news_pic" src="{{ URL('/images/tape.png') }}" alt="#" style="">
 					<h3 class="news-title">ما هي مقدمات الاشرطة؟</h3>
 					<p>من قبل هذا التطور التقني الكبير الذي حدث مؤخرا في القرن 21 كانت تسجل الدروس والمحاضرات الاسلامية على الاشرطة المدمجة (الكاسيت) ومن ثم بيعها وتداولها وقد كانت بعض الشركات والافراد يقومون بعمل اختصار للشريط الذي قد يحوى على ساعة او اكثر الى بضع دقائق تكون مقدمة للشريط لمعرفة بنود ومحتوى الشريط بشكل سريع.</p>  
 
