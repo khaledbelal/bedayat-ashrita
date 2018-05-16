@@ -116,7 +116,7 @@
                 </div>
             </div>
             <div class="card-body collapse in">
-                <div class="card-block"> 
+                <div class="card-block table-responsive height-250"> 
                 	<table class="table table-striped table-bordered zero-configuration">
                         <thead>
                             <tr>
@@ -150,7 +150,7 @@
                 </div>
             </div>
             <div class="card-body collapse in">
-                <div class="card-block"> 
+                <div class="card-block table-responsive height-250"> 
                 	<table class="table table-striped table-bordered zero-configuration">
                         <thead>
                             <tr>
