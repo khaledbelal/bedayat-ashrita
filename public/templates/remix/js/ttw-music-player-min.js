@@ -81,6 +81,7 @@
                 listItem:'<li class="track">' +
                             '<span class="title"></span>' +
                             '<span class="artist"></span>' +
+                            '<!--<span class="duration"></span>-->' +
                             '<!--<span class="rating"></span>-->' +
                             '<!--<a href="#" class="buy not-active" target="_blank"></a>-->' +
                         '</li>',
@@ -220,10 +221,10 @@
                     $ratings = $ratings.add(markup.ratingBar);
 
                 for (var j = 0; j < myPlaylist.length; j++) {
-                    var $track = $(markup.listItem);
-
+                    var $track = $(markup.listItem); 
                     //since $ratings refers to a specific object, if we just use .html($ratings) we would be moving the $rating object from one list item to the next
                     $track.find(cssSelector.rating).html($ratings.clone());
+                    $track.find(cssSelector.artist).html(artist(j));
 
                     $track.find(cssSelector.title).html(trackName(j));
 
@@ -289,6 +290,11 @@
                 if (!isUndefined(myPlaylist[index].buy)) {
                     $track.find(cssSelector.buy).removeClass(attr(cssSelector.buyNotActive)).attr('href', myPlaylist[index].buy).html(buyText(index));
                 }
+            }
+
+
+            function artist(index) {
+                return !isUndefined(myPlaylist[index].artist) ? myPlaylist[index].artist : '-';
             }
 
             function buyText(index) {

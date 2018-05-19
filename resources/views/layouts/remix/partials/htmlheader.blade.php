@@ -1,9 +1,9 @@
 
-<title>@yield('title') - إصلاح الجوارح الافئدة من مقدمات الأشرطة</title>
+<title>@yield('title') - إصلاح الجوارح والافئدة من مقدمات الأشرطة</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 <!-- Seo Meta -->
-	<meta name="description" content="إصلاح الجوارح الافئدة من مقدمات الأشرطة - اكثر من 400 مقدمة لاكثر من 20 شيخ وعالم">
+	<meta name="description" content="إصلاح الجوارح والافئدة من مقدمات الأشرطة - اكثر من 400 مقدمة لاكثر من 20 شيخ وعالم">
 	<meta name="keywords" content="مقدمات, اشرطة, اسلاميات, شيخ, تجميع, مقدمات اشرطة اسلامية">
 
 <!-- Styles -->
