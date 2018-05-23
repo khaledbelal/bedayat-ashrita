@@ -851,6 +851,7 @@ a > .sf-sub-indicator {
 }
 
 .ttw-music-player .artist {
+    font-size: 10px;
     color: #999; 
     margin-left: 4px;
 }
@@ -1081,7 +1082,7 @@ div.jp-seeking-bg {
 .ttw-music-player .show-more-button li:last-child{
 	background: transparent url(images/player/tracklist-item-bg.png) repeat-x bottom left scroll;
 }
-.ttw-music-player .tracklist .title {
+.ttw-music-player .tracklist .title{
 	width: 240px;
 	display: inline-block;
 	padding: 0 0 0 14px;

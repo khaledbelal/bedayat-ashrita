@@ -85,9 +85,11 @@ class HomeController extends Controller
 
     public function index()
     { 
+        $arr_specials = array(293,301,290,311,302,413,411,342,345,355);
         $moqdmat = Moqdma::where('active',1);
-        $ramadan = $moqdmat->where('name', 'like','%رمضان%');
-        $moqdmat = $ramadan->orderByRaw("RAND()")->limit(10)->get();  
+        //$ramadan = $moqdmat->where('name', 'like','%رمضان%');
+        $specials = $moqdmat->whereIn('id',$arr_specials);
+        $moqdmat = $specials->orderByRaw("RAND()")->limit(10)->get();  
         $moqdmat_best = Moqdma::where('active',1)->orderBy('total_views','desc')->limit(6)->get();
     	return view('frontend.home',compact('moqdmat','moqdmat_best')); 
     } 

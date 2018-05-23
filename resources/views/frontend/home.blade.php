@@ -96,73 +96,103 @@
 <!-- End Revolution Slider -->
 
 <div class="page-content">
-<div class="row row-fluid mbf">
-	<div class="def-block clearfix" style="padding-bottom: 20px;">
-		<h4> مقدمات مختارة </h4><span class="liner"></span>
-		<div class="music-player-list"></div>
-	</div>
-</div><!-- row music player -->
+	<div class="row row-fluid clearfix "> 
+		<div class="span4" >
+			<div class="def-block "  >
+				<h4> ما هي مقدمات الاشرطة؟ </h4><span class="liner"></span> 
+				<div class="  row-fluid ">    
+					<p>من قبل هذا التطور التقني الكبير الذي حدث مؤخرا في القرن 21 كانت تسجل الدروس والمحاضرات الاسلامية على الاشرطة المدمجة (الكاسيت) ومن ثم بيعها وتداولها وقد كانت بعض الشركات والافراد يقومون بعمل اختصار للشريط الذي قد يحوى على ساعة او اكثر الى بضع دقائق تكون مقدمة للشريط لمعرفة بنود ومحتوى الشريط بشكل سريع. </p>   
 
-<div class="row row-fluid clearfix mbf"> 
-	<div class="span8">
-		<div class="def-block">
-			<h4> اخر الاخبار </h4><span class="liner"></span>
+				</div>    
+			</div><!-- def block -->
+		</div><!-- span8 news --> 
 
-			<div class="news row-fluid animtt" data-gen="fadeUp" style="opacity:0;">
-				<div class="span7">
-					<h3 class="news-title">قريبا .. انشئ قائمتك المفضلة</h3>
-					<p>جاري العمل بفضل الله وبعونه على تطوير الموقع باكثر من اتجاه منها تسهيل الاستماع الى مقدماتك المفضلة وحفظها لتعود اليها في اي وقت.</p>
-					<div class="meta">
-						<span> <i class="icon-time mi"></i>11-05-2018 </span> 
-					</div><!-- meta --> 
-				</div><!-- span7 -->
-				<div class="span5"><img class="four-radius" src="{{ URL('/templates/remix/images/assets/soon.jpg') }}" alt="#"></div>
-			</div><!-- news --> 
+		<div class="span4" >
+			<div class="def-block "  >
+				<h4> هدفنا </h4><span class="liner"></span> 
+				<div class="  row-fluid ">   
+					<p>هدفنا هو جمع هذه المقدمات في مكان واحد وتقسيمها لعناصر ليسهل على المستمع التجوال بينها والاستماع اليها ومشاركتها بين الاصدقاء ليكون لنا ولكم ثوابا يوم القيامة باذن الله.</p>    
+				</div>    
+			</div><!-- def block -->
+		</div><!-- span8 news --> 
 
-			<div class="news row-fluid animtt" data-gen="fadeUp" style="opacity:0;">
-				<div class="span7">
-					<h3 class="news-title">الموقع تحت التطوير </h3>
-					<p>جاري العمل على اعداد الموقع بشكل كامل حتى يلائم رغباتكم.</p>
-					<div class="meta">
-						<span> <i class="icon-time mi"></i>10-05-2018 </span> 
-					</div><!-- meta --> 
-				</div><!-- span7 -->
-				<div class="span5"><img class="four-radius" src="{{ URL('/templates/remix/images/assets/under_construction.jpg') }}" alt="#"></div>
-			</div><!-- news --> 
-			<!-- <div class="load-news tac"><a href="#" class="tbutton small"><span>Load More</span></a></div> -->
-		</div><!-- def block -->
-	</div><!-- span8 news -->
+		<div class="span4" >
+			<div class="def-block "  >
+				<h4> كن معنا </h4><span class="liner"></span> 
+				<div class="  row-fluid ">   
+					<p>ليس فقط نحن من سيقوم بهذا العمل بل لك انت دور ان شاء الله في هذا ليكون لك ثوابه وجميع من عمل به الى يوم القيامة فيمكنك ارسال المقدمة لنا عبر البريد الالكتروني او المراسلة عبر الموقع - قريبا ان شاء الله سيكون هناك لوحة تحكم خاصة بك يمكنك من خلالها اضافة المقدمات مباشرة</p>    
+				</div>    
+			</div><!-- def block -->
+		</div><!-- span8 news --> 
+	</div><!-- row clearfix --> 
+	<br>
+	<div class="row row-fluid mbf">
+		<div class="def-block clearfix" style="padding-bottom: 20px;">
+			<h4> مقدمات مختارة </h4><span class="liner"></span>
+			<div class="music-player-list"></div>
+		</div>
+	</div><!-- row music player -->
 
-	<div class="span4 sidebar">
-		<!-- <div class="def-block widget">
-			<h4> Ads </h4><span class="liner"></span>
-			<div class="widget-content tac">
-				<a href="#" title="Advertise"><img src="images/ads1.gif" alt="#"></a>
-			</div> 
-		</div>  -->
+	<div class="row row-fluid clearfix mbf"> 
+		<div class="span8">
+			<div class="def-block">
+				<h4> اخر الاخبار </h4><span class="liner"></span>
 
-		<div class="def-block widget">
-			<h4> اكثر المقدمات استماعا </h4><span class="liner"></span>
-			<div class="widget-content row-fluid">
-				<div class="scroll-oneperson" style="height: auto;">
-					<div class="content">
-						<ul class="tab-content-items">
-							@foreach($moqdmat_best as $moqdma)
-							<li>
-								<a class="m-thumbnail" href="{{route('moqdma-listen',[$moqdma->id])}}"><img width="50" height="50" src="{{ URL('templates/remix/images/player/album-cover-bg.jpg') }}" alt="#"></a>
-								<h3><a href="{{route('moqdma-listen',[$moqdma->id])}}">{{$moqdma->name}}</a></h3>
-								<span><a href="{{route('sheikh-moqdmat',[$moqdma->sheikh->id])}}">{{$moqdma->sheikh->name}}</a> </span>
-								<span> استمعت {{$moqdma->total_views}} مرة (ات) </span>
-							</li>
-							@endforeach
-						</ul>
+				<div class="news row-fluid animtt" data-gen="fadeUp" style="opacity:0;">
+					<div class="span7">
+						<h3 class="news-title">قريبا .. انشئ قائمتك المفضلة</h3>
+						<p>جاري العمل بفضل الله وبعونه على تطوير الموقع باكثر من اتجاه منها تسهيل الاستماع الى مقدماتك المفضلة وحفظها لتعود اليها في اي وقت.</p>
+						<div class="meta">
+							<span> <i class="icon-time mi"></i>11-05-2018 </span> 
+						</div><!-- meta --> 
+					</div><!-- span7 -->
+					<div class="span5"><img class="four-radius" src="{{ URL('/templates/remix/images/assets/soon.jpg') }}" alt="#"></div>
+				</div><!-- news --> 
+
+				<div class="news row-fluid animtt" data-gen="fadeUp" style="opacity:0;">
+					<div class="span7">
+						<h3 class="news-title">الموقع تحت التطوير </h3>
+						<p>جاري العمل على اعداد الموقع بشكل كامل حتى يلائم رغباتكم.</p>
+						<div class="meta">
+							<span> <i class="icon-time mi"></i>10-05-2018 </span> 
+						</div><!-- meta --> 
+					</div><!-- span7 -->
+					<div class="span5"><img class="four-radius" src="{{ URL('/templates/remix/images/assets/under_construction.jpg') }}" alt="#"></div>
+				</div><!-- news --> 
+				<!-- <div class="load-news tac"><a href="#" class="tbutton small"><span>Load More</span></a></div> -->
+			</div><!-- def block -->
+		</div><!-- span8 news -->
+
+		<div class="span4 sidebar">
+			<!-- <div class="def-block widget">
+				<h4> Ads </h4><span class="liner"></span>
+				<div class="widget-content tac">
+					<a href="#" title="Advertise"><img src="images/ads1.gif" alt="#"></a>
+				</div> 
+			</div>  -->
+
+			<div class="def-block widget">
+				<h4> اكثر المقدمات استماعا </h4><span class="liner"></span>
+				<div class="widget-content row-fluid">
+					<div class="scroll-oneperson" style="height: auto;">
+						<div class="content">
+							<ul class="tab-content-items">
+								@foreach($moqdmat_best as $moqdma)
+								<li>
+									<a class="m-thumbnail" href="{{route('moqdma-listen',[$moqdma->id])}}"><img width="50" height="50" src="{{ URL('templates/remix/images/player/album-cover-bg.jpg') }}" alt="#"></a>
+									<h3><a href="{{route('moqdma-listen',[$moqdma->id])}}">{{$moqdma->name}}</a></h3>
+									<span><a href="{{route('sheikh-moqdmat',[$moqdma->sheikh->id])}}">{{$moqdma->sheikh->name}}</a> </span>
+									<span> استمعت {{$moqdma->total_views}} مرة (ات) </span>
+								</li>
+								@endforeach
+							</ul>
+						</div>
 					</div>
-				</div>
-			</div><!-- widget content -->
-		</div><!-- def block widget popular items -->
-	</div><!-- span4 sidebar --> 
+				</div><!-- widget content -->
+			</div><!-- def block widget popular items -->
+		</div><!-- span4 sidebar --> 
 
-</div><!-- row clearfix -->
+	</div><!-- row clearfix -->
 
 </div><!-- end page content -->
 @endsection
