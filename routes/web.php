@@ -16,6 +16,7 @@ Route::group(['middleware' => 'auth'], function () {
 	/* ======================================= cpanel ===================================== */  
 	//Home
 	Route::get('cpanel', 'HomeController@cpanelHome')->name('cpanel-home');
+	Route::get('cpanel/sitemap', 'HomeController@cpanelSitemap')->name('cpanel-sitemap');
 
 	//Sheikhs
 	Route::get('cpanel/sheikhs', 'SheikhController@index')->name('cpanel-sheikhs');

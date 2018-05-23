@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Spatie\Sitemap\Sitemap; 
 use App\User; 
 use App\Moqdma;
 use App\Sheikh;
@@ -93,4 +94,26 @@ class HomeController extends Controller
         $moqdmat_best = Moqdma::where('active',1)->orderBy('total_views','desc')->limit(6)->get();
     	return view('frontend.home',compact('moqdmat','moqdmat_best')); 
     } 
+
+    public function cpanelSitemap()
+    { 
+        $sitemap = Sitemap::create()
+            ->add(Route('home'))
+            ->add(Route('all-moqdmat'))
+            ->add(Route('all-sheikhs'))
+            ->add(Route('about'))
+            ->add(Route('contact'));
+
+        Moqdma::where('active',1)->get()->each(function (Moqdma $moqdma) use ($sitemap) {
+            $sitemap->add(Route('moqdma-listen',[$moqdma->id]));
+        });
+
+        Sheikh::where('active',1)->get()->each(function (Sheikh $sheikh) use ($sitemap) { 
+            $sitemap->add(Route('sheikh-moqdmat',[$sheikh->id]));
+        });
+
+        $sitemap->writeToFile(public_path('sitemap.xml'));
+
+        return \Redirect::route('cpanel-home');
+    }
 }
