@@ -16,7 +16,6 @@ Route::group(['middleware' => 'auth'], function () {
 	/* ======================================= cpanel ===================================== */  
 	//Home
 	Route::get('cpanel', 'HomeController@cpanelHome')->name('cpanel-home');
-	Route::get('cpanel/sitemap', 'HomeController@cpanelSitemap')->name('cpanel-sitemap');
 
 	//Sheikhs
 	Route::get('cpanel/sheikhs', 'SheikhController@index')->name('cpanel-sheikhs');
@@ -40,6 +39,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 /* ======================================= Front-end ===================================== */  
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('cpanel/sitemap', 'HomeController@cpanelSitemap')->name('cpanel-sitemap');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/contact', 'HomeController@contact')->name('contact');
 Route::post('/contact', 'HomeController@sendMessage')->name('send-message');
