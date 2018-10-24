@@ -20,7 +20,21 @@
 		</header><!-- end header -->
 		
 		@yield('content')
-
+		<div class="row row-fluid clearfix mbf">
+			<div class="span12" style="text-align: center;">
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- جانبي - المقدمات -->
+				<ins class="adsbygoogle"
+				     style="display:block"
+				     data-ad-client="ca-pub-2666531989911883"
+				     data-ad-slot="1897428159"
+				     data-ad-format="auto"
+				     data-full-width-responsive="true"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>
+		</div>
 		<footer id="footer"> 
 			@include('layouts.remix.partials.footer')
 		</footer><!-- end footer -->
