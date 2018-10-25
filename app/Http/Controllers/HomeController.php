@@ -65,7 +65,7 @@ class HomeController extends Controller
     {   
         // Define some constants
         $my_name = "khaledbelal";
-        $my_mail = "me@khaledbelal.net";
+        $my_mail = "me@khaledbelal.com";
         $subject = "مقدمات الاشرطة - رسالة من ".$request->senderName;
 
         // Read the form values

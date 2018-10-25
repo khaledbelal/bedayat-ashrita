@@ -32,7 +32,7 @@
 			<div class="def-block widget">
 				<h4> طرق اخرى للتواصل </h4><span class="liner"></span>
 				<div class="widget-content">  
-					<p>بريد الكتروني: <strong>me@khaledbelal.net</strong></p>
+					<p>بريد الكتروني: <strong>me@khaledbelal.com</strong></p>
 				</div><!-- widget content -->
 			</div><!-- def block widget details -->
 
